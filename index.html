@@ -2,33 +2,143 @@
 <html lang="en"> <!-- starts HTML document, english -->
 <head> <!-- contains meta information-->
   <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
   <meta charset="UTF-8" /> <!-- character encoding t -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=2.0" />
   <!-- sets page width to width of device, zoom level to 100% -->
   <title>Hannah Webb</title> <!-- sets tab title -->
   <style> /* block of internal CSS */
+    h1 {
+        color: #000000;
+        font-size: 70px;
+        margin-top: 10px; 
+        margin-bottom: 24px;
+    }
+    h2 {
+        color: #000000;
+        font-size: 22px; 
+        font-family: 'Karla';
+        margin: 0;
+        max-width: 560px; 
+        text-align: left;  
+    }
+    h3 {
+        color: #000000;
+        font-size: 18px;
+        font-family: 'Karla';
+        margin-top: 20px;
+        max-width: 600px; 
+        text-align: left;
+    }
+    .line {
+        width: 65%;
+        height: 2px;
+        background-color: black;
+        margin: 5px auto;
+    }
+    nav { /* nagivation bar */
+      display: flex;
+      flex-wrap: wrap; 
+      justify-content: center;
+      gap: 40px;
+      margin: 10px 0;
+    }
+    nav a { /* navigation bar elements */
+      text-decoration: none;
+      color: #444;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 2px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #797249;
+    }
+    .content-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center; 
+        justify-content: center;
+        gap: 40px; 
+        flex-wrap: wrap;
+        margin-top: 40px; 
+        text-align: left; 
+    }
+    .content-wrapper img {
+        border-radius: 7%;
+        border: 3px solid #797249; 
+        box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
+        max-width: 50vw;
+        height: auto; 
+        margin-left: -5px;
+        margin-top: 20px;
+    }
     body {
       font-family: 'Kosugi Maru';
       background-color: #F7F3DB;
-      padding: 40px;
+      padding: 20px;
       text-align: center;
     }
-    h1 {
-      color: #000000;
+    .black-section {
+      background-color: #000;
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+      margin-top: 210px;
+      width: 100vw;
+      height: 20px; 
+      display: flex; 
+      box-sizing: border-box; 
     }
-    img {
-        border-radius: 7%;
-        float: left;
-        margin: 170px;
-        margin-top: 70px; 
-        border: 3px solid #797249; 
-        box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
+    .section-text {
+      font-family: 'Karla';
+      font-size: 20px;
+    }
+     @media (max-width: 768px) {
+      h1 {
+        font-size: 36px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+      nav {
+        gap: 40px;
+      }
+      .line {
+        width: 90%;
+      }
+      .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+      }
+      .content-wrapper img {
+        margin: 0 auto;
+      }
     }
   </style>
   </head>
   <body> <!-- begins visible page content -->
   <h1>Hannah Webb</h1>
-  <img src="img_0979.jpg" alt="headshot" width="350" />
-  <p>Welcome to my very first webpage!</p>
+  <div class="line"></div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#clarinet">Clarinet</a>
+    <a href="#writing">Writing</a>
+  </nav>
+  <div class="line"></div>
+  <div class = "content-wrapper">
+  <img src="img_0979.jpg" alt="headshot" width="300" />
+  <div class="text-block">
+  <h2> Northwestern Engineering & Clarinet Performance ‣ 18 </h2>
+  <h3> Hey! I enjoy problem-solving and am passionate about web-development, AI, data ethics, 
+    and human geography. Music is a big part of my life—I've studied the clarinet for 10 years. 
+    In free time, I like to run, bake, and write. Feel free to reach out! </h3>
+  </div>
+  </div>
+  <div class="black-section">
+  <p class="section-text">More coming soon!</p>
+  </div>
 </body>
 </html>
