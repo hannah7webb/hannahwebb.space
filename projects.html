@@ -29,8 +29,10 @@
     .content-wrapper { display: flex; flex-direction: row; align-items: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; text-align: center; }
     .content-wrapper img { margin: 0px auto; border-radius: 7%; max-width: 50vw; height: auto; margin-top: -20px;}
     .project-grid { width: 65%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 20px ; margin: 0 auto; }
-    .project-card { margin-top: 20px; background-color: #e8e8e8; border-radius: 12px; padding: 20px; text-align: left; box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    text-decoration: none; color: #000;}
+    .project-card { margin-top: 20px; background-color: #e8e8e8; border-radius: 12px; padding: 20px; text-align: left; box-shadow: 0 8px 20px rgba(0,0,0,0.25); text-decoration: none; color: #000;}
+    .fade-section { animation: fadeInUp 1s ease forwards; opacity: 0; transform: translateY(30px); }
+
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); }}
 
     @media (max-width: 768px) { /* styling that overrides when screen is 768px wide or smaller */
     h1 { font-size: 40px; }
@@ -46,11 +48,11 @@
     h1:hover { color: #414141; } /* styling when hovering over links */
     nav a:hover { color: #535353; }
     .icon-row a:hover { color: #535353; }
-
   </style>
-  </head>
+</head>
 
-  <body> <!-- begins visible page content -->
+<body> <!-- begins visible page content -->
+
   <h1><a href="index.html" class="home-link">hannah webb</a></h1> 
 
   <div class="line"></div>
@@ -60,16 +62,18 @@
   <h2 style="margin-top: 26px; text-align: left;"> I'm currently working on my programming skills and will be adding cool stuff I build here. View more details via my <a href="https://github.com/hannah7webb">GitHub!</a></h2>
 
   <div class="project-grid">
-  <div class="project-card">
-    <h3 style="font-family: Karla;">Personal Website</h3>
-    <div class = "content-wrapper img">
-    <img src="website.jpeg" alt="website" width="300"/>
-    </div>
-    <p style="font-family: Karla;">built from scratch with HTML and CSS, featuring custom fonts, mobile-friendly layout, embedded YouTube content, custom Google Fonts, and Font Awesome icons 
-    </p>
-</div>
-</div>
+  <div class="project-card fade-section">
+  <h3 style="font-family: Karla;">Personal Website</h3>
+  <div class = "content-wrapper img">
+  <img src="website.jpeg" alt="website" width="300"/>
+  </div>
+  <p style="font-family: Karla;">built from scratch with HTML and CSS, featuring custom fonts, mobile-friendly layout, embedded YouTube content, custom Google Fonts, and Font Awesome icons </p>
+  </div>
+  </div>
+
   <div class="line" style="height: 1px; margin-top: 100px;"></div>
   <h4>Website created by Hannah Webb</h4>
+
 </body> <!-- ends visible page content -->
+
 </html>

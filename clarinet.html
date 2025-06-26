@@ -17,11 +17,13 @@
     html {scroll-behavior: smooth;}
     h1 { color: #000000; font-size: 70px; font-weight: 100; margin-top: 50px; margin-bottom: 24px; } /* styling of HTML tags (structures) */
     h2 { color: #000000; font-size: 18px; font-family: 'Karla'; margin-top: -10px; padding: 0 17.5%; }
-    h3 { color: #000000; font-size: 16px; font-family: 'Karla'; margin: 4px 0; padding: 0 17.5%; line-height: 1.2; }
+    h3 { color: #000000; font-size: 16px; font-family: 'Karla'; margin: 20px 0; padding: 0 17.5%; line-height: 1.3; text-align: left;}
     h4 { color: #000000; font-size: 12px; font-family: 'Karla'; margin-top: 10px; text-align: center; }
     nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 90px; margin: 10px 0; } /* a = links in CSS */
     nav a { text-decoration: none; color: #000000; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
-    body { font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; margin: 0; padding: 20px; }
+    body { margin-bottom: 100px; font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; margin: 0; padding: 20px; }
+
+    body::after { content: ""; position: fixed; bottom: 0; left: 0; width: 100%; height: 80px; pointer-events: none; background: linear-gradient(to top, white, rgba(255,255,255,0)); z-index: 10; }
 
     .home-link { text-decoration: none; color: inherit; } /* styling of HTML classes (features defined in body) */
     .line { width: 65%; height: 2px; background-color: black; margin: 5px auto; }
@@ -29,40 +31,47 @@
     .icon-row { margin-top: auto; display: flex; gap: 16px; font-size: 22px; }
     .icon-row a { color: #000; text-decoration: none; }
     .content-wrapper { display: flex; flex-direction: row; align-items: center; flex-wrap: wrap; margin-top: 40px; text-align: left; }
-    .video-wrapper { margin-top: 20px; }
-    .video-wrapper iframe { width: 100%; max-width: 560px; aspect-ratio: 16 / 9; border: none; border-radius: 12px; overflow: hidden;}
+    .video-wrapper { margin-top: 15px; }
+    .video-wrapper iframe { margin-top: 10px; width: 100%; max-width: 560px; aspect-ratio: 16 / 9; border: none; border-radius: 12px; overflow: hidden;}
     .bio-section { padding: 0 17.5%; text-align: left;}
-
     .entry-grid { display: grid; grid-template-columns: 90px auto; gap: 12px; padding-left: 17.5%; padding-right: 17.5%; margin-bottom: 30px; }
-    .entry-grid .year { font-weight: bold; font-family: 'Karla', sans-serif; color: #000; text-align: right; }
-    .entry-grid .description { font-family: 'Karla', sans-serif; font-size: 14px; color: #000; line-height: 1.4; }
+    .entry-grid .year {font-weight: bold; font-family: 'Karla', sans-serif; color: #000; text-align: right; }
+    .entry-grid .description { font-family: 'Karla', sans-serif; font-size: 16px; color: #000; line-height: 1.4; }
 
     @media (max-width: 768px) { /* styling that overrides when screen is 768px wide or smaller */
     h1 { font-size: 40px; }
     h2 { font-size: 16px; padding: 0; width: 90%; margin-left: auto; margin-right: auto;}
-    h3 { font-size: 12px; padding: 0; width: 90%; margin: 4px auto; line-height: 1.2;}
+    h3 { font-size: 12px; padding: 0; width: 90%; margin: 13px auto; line-height: 1.25;}
     h4 { font-size: 10px; }
     nav a { font-size: 16px; }
     .line { width: 90%; } 
     .content-wrapper { width: 90%; flex-direction: column; text-align: left; align-items: left; margin-left: 0;}
     .video-wrapper iframe { max-width: 300px; max-height: 168px; border-radius: 12px;}
-    .entry-grid { padding-left: 5%; padding-right: 0;}}
+    .entry-grid { padding-left: 5%; padding-right: 0;}
+    .entry-grid .description {font-size: 12px;}
+    .entry-grid .year {font-size: 12px;}}
+
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); }}
 
     h1:hover { color: #414141; } /* styling when hovering over links */
     nav a:hover { color: #535353; }
     .icon-row a:hover { color: #535353; }
+    .reveal-gradient { position: relative; }
+    .reveal-gradient::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); pointer-events: none; z-index: 1; }
+    .fade-section { animation: fadeInUp 1s ease forwards; opacity: 0; transform: translateY(30px); }
 
   </style>
   </head>
 
-  <body> <!-- begins visible page content -->
+<body> <!-- begins visible page content -->
+<div class="reveal-gradient">
   <h1><a href="index.html" class="home-link">hannah webb</a></h1> 
 
   <div class="line"></div>
   <nav> <a href="projects.html">projects</a> <a href="clarinet.html">clarinet</a> </nav>
   <div class="line"></div>
 
-  <div class = "video-wrapper">
+  <div class = "video-wrapper fade-section">
   <iframe width="560" height="315"
     src="https://www.youtube.com/embed/W9BRnLwdTeE?si=YFg6GHVB-vZ3FDHs"
     title="YouTube video player"
@@ -72,18 +81,14 @@
   </iframe>
   </div>
 
-  <h3 style="margin-top: 20px; margin-bottom: 15px; justify-content: center; text-align: center;"> 
-  ♪ for more listening, you can check out my 
-  <a href="https://youtube.com/@hannah7clarinet?si=2xyEB6kSi9V0f5bI"> YouTube</a> or 
-  <a href ="https://www.instagram.com/hannahclarinettt/ "> Instagram</a> ♪ 
-  </h3>
+  <h3 class="fade-section" style="justify-content: center; text-align: center;"> ♪ for more listening, you can check out my <a href="https://youtube.com/@hannah7clarinet?si=2xyEB6kSi9V0f5bI"> YouTube</a> or <a href ="https://www.instagram.com/hannahclarinettt/ "> Instagram</a> ♪ </h3>
 
   <h2 style="margin-top: 20px; text-align: left;"> biography: </h2>
-  <h3 style="margin-top: 12px; text-align: left;"> Hannah is a sophomore at Northwestern, pursuing a dual degree in engineering and clarinet performance. She studies under Stephen Williamson, Principal Clarinet of the Chicago Symphony Orchestra, and Todd Levy, Principal Clarinet of the Milwaukee Symphony Orchestra, at the Bienen School of Music. </h3>
-  <h3 style="margin-top: 12px; text-align: left;"> She began playing clarinet at age nine in a public school program in Santa Monica and studied privately for eight years with Amanda Walker. Early opportunities in local ensembles like Elemental Band and SMMUSD Honor Band sparked her passion, and by 6th grade, she was immersed in the John Adams Middle School music program. The skills Hannah built with Amanda Walker, combined with the high standards set by her middle school director Angela Woo, fueled her drive to grow as a musician. </h3>
-  <h3 style="margin-top: 12px; text-align: left;"> She was selected to perform with the California All-State Ensembles for six consecutive years, earning first chair statewide in 8th, 10th, and 12th grade, performing principal parts in works like Scheherazade, Hebrides Overture, and Danzón No. 2. Hannah found joy in performing with youth orchestras such as the Los Angeles Youth Orchestra (LAYO) and Colburn Sinfonietta. Highlights with LAYO include playing principal clarinet on Beethoven's Sixth in 8th grade and Sibelius' Second in Carnegie Hall in 10th. With Colburn, she was featured in a hand-selected woodwind quintet, performing works of Ibert and Nielsen, and served as principal on Beethoven's Eroica with the Sinfonietta in 12th grade.</h3>
-  <h3 style="margin-top: 12px; text-align: left;"> Over high school summers, Hannah attended programs at Idyllwild Arts and Boston University Tanglewood Institute. In a mock audition at Tanglewood's two-week clarinet intensive, David Martins, renowned clarinet pedagogue, and Christopher Elchico, second clarinetist of the Boston Symphony Orchestra, described the opening of Hannah's Mozart Clarinet Concerto as the “most captivating” of the pool. The summer before her senior year, Hannah advanced to the final round of the International Clarinet Association's High School Solo Competition, and performed live in Denver for a panel of international professionals. She placed first for the United States and fourth globally. </h3>
-  <h3 style="margin-top: 12px; margin-bottom: -10px; text-align: left;"> Hannah is especially grateful to Amanda Walker, whose belief in her shaped both her musicianship and confidence. Music remains a central source of meaning and joy in her life. </h3>
+  <h3> Hannah is a sophomore at Northwestern, pursuing a dual degree in engineering and clarinet performance. She studies under Stephen Williamson, Principal Clarinet of the Chicago Symphony Orchestra, and Todd Levy, Principal Clarinet of the Milwaukee Symphony Orchestra, at the Bienen School of Music. </h3>
+  <h3> She began playing clarinet at age nine in a public school program in Santa Monica and studied privately for eight years with Amanda Walker. Early opportunities in local ensembles like Elemental Band and SMMUSD Honor Band sparked her passion, and by 6th grade, she was immersed in the John Adams Middle School music program. The skills Hannah built with Amanda Walker, combined with the high standards set by her middle school director Angela Woo, fueled her drive to grow as a musician. </h3>
+  <h3> She was selected to perform with the California All-State Ensembles for six consecutive years, earning first chair statewide in 8th, 10th, and 12th grade, performing principal parts in works like Scheherazade, Hebrides Overture, and Danzón No. 2. Hannah found joy in performing with youth orchestras such as the Los Angeles Youth Orchestra (LAYO) and Colburn Sinfonietta. Highlights with LAYO include playing principal clarinet on Beethoven's Sixth in 8th grade and Sibelius' Second in Carnegie Hall in 10th. With Colburn, she was featured in a hand-selected woodwind quintet, performing works of Ibert and Nielsen, and served as principal on Beethoven's Eroica with the Sinfonietta in 12th grade.</h3>
+  <h3> Over high school summers, Hannah attended programs at Idyllwild Arts and Boston University Tanglewood Institute. In a mock audition at Tanglewood's two-week clarinet intensive, David Martins, renowned clarinet pedagogue, and Christopher Elchico, second clarinetist of the Boston Symphony Orchestra, described the opening of Hannah's Mozart Clarinet Concerto as the “most captivating” of the pool. The summer before her senior year, Hannah advanced to the final round of the International Clarinet Association's High School Solo Competition, and performed live in Denver for a panel of international professionals. She placed first for the United States and fourth globally. </h3>
+  <h3 style="margin-bottom: -10px;"> Hannah is especially grateful to Amanda Walker, whose belief in her shaped both her musicianship and confidence. Music remains a central source of meaning and joy in her life. </h3>
 
   <div class = "content-wrapper">
   <h2> awards: </h2>
@@ -106,59 +111,47 @@
     Kiwanis Middle School Winds/Percussion Solo Competition
     <div class="sub-detail">▸ 3rd place</div>
   </div>
-</div>
+  </div>
 
   <h2> ensembles & programs: </h2>
 
   <div class="entry-grid">
-  <div class="year">2025</div>
-  <div class="description">Montecito International Music Festival <i class="fas fa-award"></i></div>
-
-  <div class="year">2025</div>
-  <div class="description">Northwestern Symphonic Wind Ensemble</div>
-
-  <div class="year">2024</div>
-  <div class="description">Northwestern Symphonic Band <i class="fas fa-award"></i></div>
-
-  <div class="year">2023 - 2024</div>
-  <div class="description">Colburn Sinfonietta <i class="fas fa-award"></i></div>
-
-  <div class="year">2019 - 2024</div>
-  <div class="description">California All-State Honor Groups (grades 8, 10, 12 <i class="fas fa-award"></i>)</div>
-
-  <div class="year">2019 - 2023</div>
-  <div class="description">California All-Southern Honor Groups</div>
-
-  <div class="year">2023</div>
-  <div class="description">Tanglewood Young Artist Orchestra</div>
-
-  <div class="year">2023</div>
-  <div class="description">Tanglewood Clarinet Intensive</div>
-
-  <div class="year">2022 - 2023</div>
-  <div class="description">Colburn Honors Woodwind Quintet</div>
-
-  <div class="year">2020, 2022</div>
-  <div class="description">Los Angeles Youth Orchestra <i class="fas fa-award"></i></div>
-
-  <div class="year">2022</div>
-  <div class="description">Idyllwild Arts ChamberFest</div>
-
-  <div class="year">2020</div>
-  <div class="description">Idyllwild Arts Summer Program <i class="fas fa-award"></i></div>
-
-  <div class="year">2017</div>
-  <div class="description">Elemental Band <i class="fas fa-award"></i></div>
-
-  <div class="year">2017</div>
-  <div class="description">SMMUSD Honor Band <i class="fas fa-award"></i></div>
-</div>
+    <div class="year">2025</div>
+    <div class="description">Montecito International Music Festival <i class="fas fa-award"></i></div>
+    <div class="year">2025</div>
+    <div class="description">Northwestern Symphonic Wind Ensemble</div>
+    <div class="year">2024</div>
+    <div class="description">Northwestern Symphonic Band <i class="fas fa-award"></i></div>
+    <div class="year">2023 - 2024</div>
+    <div class="description">Colburn Sinfonietta <i class="fas fa-award"></i></div>
+    <div class="year">2019 - 2024</div>
+    <div class="description">California All-State Honor Groups (grades 8, 10, 12 <i class="fas fa-award"></i>)</div>
+    <div class="year">2019 - 2023</div>
+    <div class="description">California All-Southern Honor Groups</div>
+    <div class="year">2023</div>
+    <div class="description">Tanglewood Young Artist Orchestra</div>
+    <div class="year">2023</div>
+    <div class="description">Tanglewood Clarinet Intensive</div>
+    <div class="year">2022 - 2023</div>
+    <div class="description">Colburn Honors Woodwind Quintet</div>
+    <div class="year">2020, 2022</div>
+    <div class="description">Los Angeles Youth Orchestra <i class="fas fa-award"></i></div>
+    <div class="year">2022</div>
+    <div class="description">Idyllwild Arts ChamberFest</div>
+    <div class="year">2020</div>
+   <div class="description">Idyllwild Arts Summer Program <i class="fas fa-award"></i></div>
+    <div class="year">2017</div>
+    <div class="description">Elemental Band <i class="fas fa-award"></i></div>
+    <div class="year">2017</div>
+    <div class="description">SMMUSD Honor Band <i class="fas fa-award"></i></div>
+  </div>
 
   <h3 style="margin-top: -10px;"><i class="fas fa-award"></i> = Principal Clarinet </h3>
-  <div class="text-block">
+
   </div>
-  </div>
-  <div class="line" style="height: 1px; margin-top: 100px;"></div>
-  <h4>Website created by Hannah Webb</h4>
+
+  <div class="line" style="height: 1px; margin-top: 100px; margin-bottom: 100px; position: relative; z-index: 11;"></div>
+  <h4 style="margin-top: -90px; margin-bottom: 10px; position: relative; z-index: 11;">Website created by Hannah Webb</h4>
+</div>
 </body> <!-- ends visible page content -->
 </html>
