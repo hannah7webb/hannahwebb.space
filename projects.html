@@ -23,9 +23,6 @@
 
     .home-link { text-decoration: none; color: inherit; } /* styling of HTML classes (features defined in body) */
     .line { width: 65%; height: 2px; background-color: black; margin: 5px auto; }
-    .text-block { display: flex; flex-direction: column; max-height: 100%; }
-    .icon-row { margin-top: auto; display: flex; gap: 16px; font-size: 22px; }
-    .icon-row a { color: #000; text-decoration: none; }
     .content-wrapper { display: flex; flex-direction: row; align-items: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; text-align: center; }
     .content-wrapper img { margin: 0px auto; border-radius: 7%; max-width: 50vw; height: auto; margin-top: -20px;}
     .project-grid { width: 65%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 20px ; margin: 0 auto; }
@@ -40,14 +37,10 @@
     h4 { font-size: 10px; }
     nav a { font-size: 16px; }
     .line { width: 90%; } 
-    .project-grid {margin: 0 auto; width: 90%;}}
-
-    @media (max-width: 1116px) {
-    .content-wrapper img {width: 250px;}}
+    .project-grid {width: 90%;}}
 
     h1:hover { color: #414141; } /* styling when hovering over links */
     nav a:hover { color: #535353; }
-    .icon-row a:hover { color: #535353; }
   </style>
 </head>
 
@@ -65,9 +58,9 @@
   <div class="project-card fade-section">
   <h3 style="font-family: Karla;">Personal Website</h3>
   <div class = "content-wrapper img">
-  <img src="website.jpeg" alt="website" width="300"/>
+  <img src="website.jpg" alt="website" width="300"/>
   </div>
-  <p style="font-family: Karla;">built from scratch with HTML and CSS, featuring custom fonts, mobile-friendly layout, embedded YouTube content, custom Google Fonts, and Font Awesome icons </p>
+  <p style="font-family: Karla;">built from scratch with HTML and CSS, featuring mobile-friendly layout, embedded YouTube content, custom Google Fonts, Font Awesome icons, and page-load animations </p>
   </div>
   </div>
 
