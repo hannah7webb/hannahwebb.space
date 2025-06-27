@@ -24,12 +24,15 @@
     .home-link { text-decoration: none; color: inherit; } /* styling of HTML classes (features defined in body) */
     .line { width: 65%; height: 2px; background-color: black; margin: 5px auto; }
     .content-wrapper { display: flex; flex-direction: row; align-items: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; text-align: center; }
-    .content-wrapper img { margin: 0px auto; border-radius: 7%; max-width: 50vw; height: auto; margin-top: -20px;}
-    .project-grid { width: 65%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 20px ; margin: 0 auto; }
-    .project-card { margin-top: 20px; background-color: #e8e8e8; border-radius: 12px; padding: 20px; text-align: left; box-shadow: 0 8px 20px rgba(0,0,0,0.25); text-decoration: none; color: #000;}
-    .fade-section { animation: fadeInUp 1s ease forwards; opacity: 0; transform: translateY(30px); }
+    .content-wrapper img { margin: 0 auto; border-radius: 7%; max-width: 95%; height: auto; margin-top: -20px;}
+    .project-grid { text-decoration: none; width: 65%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 20px ; margin: 0 auto; }
+    .project-card { text-decoration: none; margin-top: 20px; background-color: #e8e8e8; border-radius: 12px; padding: 20px; text-align: left; box-shadow: 0 8px 20px rgba(0,0,0,0.25); text-decoration: none; color: #000; transition: transform 0.3s ease, box-shadow 0.3s ease;}
+    .fade-section { animation: fadeInUp 1s ease forwards; }
+    a.fade-section { text-decoration: none; color: inherit; }
 
-    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); }}
+    .project-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); cursor: pointer; }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
     @media (max-width: 768px) { /* styling that overrides when screen is 768px wide or smaller */
     h1 { font-size: 40px; }
@@ -55,13 +58,27 @@
   <h2 style="margin-top: 26px; text-align: left;"> I'm currently working on my programming skills and will be adding cool stuff I build here. View more details via my <a href="https://github.com/hannah7webb">GitHub!</a></h2>
 
   <div class="project-grid">
-  <div class="project-card fade-section">
+
+  <a href="index.html" class="fade-section">
+  <div class = "project-card">
   <h3 style="font-family: Karla;">Personal Website</h3>
   <div class = "content-wrapper img">
   <img src="website.jpg" alt="website" width="300"/>
   </div>
   <p style="font-family: Karla;">built from scratch with HTML and CSS, featuring mobile-friendly layout, embedded YouTube content, custom Google Fonts, Font Awesome icons, and page-load animations </p>
   </div>
+  </a>
+
+  <a href="zero2ship.html" class="fade-section">
+  <div class = "project-card">
+  <h3 style="font-family: Karla;">Zero2Ship</h3>
+  <div class = "content-wrapper img">
+  <img src="in-progress.jpg" alt="in progress" width="300"/>
+  </div>
+  <p style="font-family: Karla;"> an interactive guide for new devs covering what I've learned so far: terminal navigation, VS Code set-up, GitHub, HTML & CSS basics, and deploying your first site to a domain </p>
+  </div>
+  </a>
+
   </div>
 
   <div class="line" style="height: 1px; margin-top: 100px;"></div>
