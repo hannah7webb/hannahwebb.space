@@ -15,19 +15,25 @@
   <style>
     html {scroll-behavior: smooth;}
     h1 { color: #000000; font-size: 70px; font-weight: 100; margin-top: 50px; margin-bottom: 24px; }
-    h4 { color: #000000; font-size: 12px; font-family: 'Karla'; margin-top: 10px; text-align: left; margin: 0 17.5%;}
+    h2 { color: #000000; font-size: 28px; font-family: 'Karla'; text-align: left; margin: 20px 17.5%; }
+    h3 { color: #5a5a5a; font-size: 12px; font-family: 'Karla'; text-align: left; margin: 0 17.5%; }
+    h4 { color: #000000; font-size: 12px; font-family: 'Karla'; text-align: left; margin: 0 17.5%; }
     nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 90px; margin: 10px 0; } /* a = links in CSS */
     nav a { text-decoration: none; color: #000000; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
     body { font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; margin: 0; padding: 20px; }
     .home-link { text-decoration: none; color: inherit; } /* styling of HTML classes (features defined in body) */
     .line { width: 65%; height: 2px; background-color: black; margin: 5px auto; }
+    .img { width: 45%; margin: 20px 17.5%; }
 
     @media (max-width: 768px) { /* styling that overrides when screen is 768px wide or smaller */
     h1 { font-size: 40px; }
-    h4 { font-size: 10px; margin: 0 5%;}
+    h2 { font-size: 20px; margin: 12px 5%; }
+    h3 { font-size: 10px; margin: 12px 5%; }
+    h4 { font-size: 10px; margin: 0 5%; }
     nav a { font-size: 16px; }
-    nav {gap: 30px;}
-    .line { width: 90%; }}
+    nav { gap: 30px; }
+    .line { width: 90%; }
+    .img { width: 75%; margin: 0 5%;}}
 
     h1:hover { color: #414141; } /* styling when hovering over links */
     nav a:hover { color: #535353; }
@@ -40,6 +46,12 @@
   <div class="line"></div>
   <nav> <a href="projects.html">projects</a> <a href="clarinet.html">clarinet</a> <a href="writing.html">writing</a></nav>
   <div class="line"></div>
+
+  <h2>What Music Taught Me About Life</h2>
+  <h3 style="margin-top: -10px;">By Hannah Webb</h3>
+  <h3 style="margin-top: 2px;"><i class="fa-regular fa-clock"></i> 4 minute read · Written December 31, 2023 · Published June 29, 2025</h3>
+
+  <img class="img" src="writing2.jpg" alt="robot typing on computer"/>
 
   <div class="line" style="height: 1px; margin-top: 234px;"></div>
   <h4>Website created by Hannah Webb | Visuals generated with DALL·E, powered by OpenAI</h4>
