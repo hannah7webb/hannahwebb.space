@@ -1,0 +1,45 @@
+<!DOCTYPE html> <!-- tells browser we're using HTML -->
+<html lang="en"> <!-- starts HTML document, english -->
+<head> <!-- contains meta information (not shown) -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet"> <!-- imports Kosugi Maru font -->
+  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet"> <!-- imports Karla font -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"> <!-- imports icons -->
+
+  <meta charset="UTF-8" /> <!-- character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- sets page width to width of device, zoom level to 100% -->
+  
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <title>Hannah Webb</title> <!-- sets tab title -->
+
+  <style>
+    html {scroll-behavior: smooth;}
+    h1 { color: #000000; font-size: 70px; font-weight: 100; margin-top: 50px; margin-bottom: 24px; }
+    h4 { color: #000000; font-size: 12px; font-family: 'Karla'; margin-top: 10px; text-align: left; margin: 0 17.5%;}
+    nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 90px; margin: 10px 0; } /* a = links in CSS */
+    nav a { text-decoration: none; color: #000000; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
+    body { font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; margin: 0; padding: 20px; }
+    .home-link { text-decoration: none; color: inherit; } /* styling of HTML classes (features defined in body) */
+    .line { width: 65%; height: 2px; background-color: black; margin: 5px auto; }
+
+    @media (max-width: 768px) { /* styling that overrides when screen is 768px wide or smaller */
+    h1 { font-size: 40px; }
+    nav a { font-size: 16px; }
+    .line { width: 90%; }}
+
+    h1:hover { color: #414141; } /* styling when hovering over links */
+    nav a:hover { color: #535353; }
+  </style>
+</head>
+
+<body>
+  <h1><a href="index.html" class="home-link">hannah webb</a></h1> 
+
+  <div class="line"></div>
+  <nav> <a href="projects.html">projects</a> <a href="clarinet.html">clarinet</a> <a href="writing.html">writing</a></nav>
+  <div class="line"></div>
+
+  <div class="line" style="height: 1px; margin-top: 234px;"></div>
+  <h4>Website created by Hannah Webb | Visuals generated with DALL·E, powered by OpenAI</h4>
+</body>
+</html>
