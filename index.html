@@ -9,18 +9,19 @@
   <meta charset="UTF-8" /> <!-- character encoding -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- sets page width to width of device, zoom level to 100% -->
   
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="icon" type="image/png" href="favicon.png" /> <!-- sets tab icon -->
   <title>Hannah Webb</title> <!-- sets tab title -->
 
   <style> /* block of internal CSS */
-    html {scroll-behavior: smooth;}
+  
+    html { scroll-behavior: smooth; }
     h1 { color: #000000; font-size: 70px; font-weight: 100; margin-top: 50px; margin-bottom: 24px; } /* styling of HTML tags (structures) */
     h2 { color: #000000; font-size: 22px; font-family: 'Karla'; margin: 0; max-width: 560px; text-align: left; }
-    h3 { color: #000000; font-size: 18px; font-family: 'Karla'; margin-top: 20px; max-width: 600px; text-align: left; }
-    h4 { color: #000000; font-size: 12px; font-family: 'Karla'; margin-top: 10px; text-align: left; margin: 0 17.5%;}
+    p { color: #000000; font-size: 18px; font-family: 'Karla'; margin-top: 20px; max-width: 600px; text-align: left; }
+    footer p { color: #000000; font-size: 12px; font-family: 'Karla'; text-align: left; margin: 0 17.5%; }
     nav { display: flex; justify-content: center; gap: 90px; margin: 10px 0; } /* a = links in CSS */
-    nav a { text-decoration: none; color: #000000; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
-    body { font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; margin: 0; padding: 20px; }
+    nav a { color: #000000; text-decoration: none; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
+    body { font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; padding: 20px; }
 
     .home-link { text-decoration: none; color: inherit; } /* styling of HTML classes (features defined in body) */
     .line { width: 65%; height: 2px; background-color: black; margin: 5px auto; }
@@ -33,45 +34,49 @@
     @media (max-width: 768px) { /* styling that overrides when screen is 768px wide or smaller */
     h1 { font-size: 40px; } 
     h2 { font-size: 16px; } 
-    h3 { font-size: 14px; }
-    h4 { font-size: 10px; margin: 0 5%;}
-    nav a { font-size: 16px;}
-    nav {gap: 30px;}
+    p { font-size: 14px; }
+    footer p { font-size: 10px; margin: 0 5%; }
+    nav a { font-size: 16px; }
+    nav { gap: 30px; }
     .line { width: 90%; } 
-    .content-wrapper { width: 90%; flex-direction: column; text-align: center; align-items: center; margin-left: 20px;}}
+    .content-wrapper { width: 90%; flex-direction: column; text-align: center; align-items: center; margin-left: 20px; }}
 
     h1:hover { color: #414141; } /* styling when hovering over links */
     nav a:hover { color: #535353; }
     .icon-row a:hover { color: #535353; }
+
   </style>
   </head>
 
   <body> <!-- begins visible page content -->
-  <h1><a href="index.html" class="home-link">hannah webb</a></h1> 
 
+  <header> <!-- intro-related content -->
+  <h1><a href="index.html" class="home-link">hannah webb</a></h1> 
   <div class="line"></div>
   <nav> <a href="projects.html">projects</a> <a href="clarinet.html">clarinet</a> <a href="writing.html">writing</a></nav>
   <div class="line"></div>
+  </header>
 
+  <main> <!-- webpage's meat content -->
   <div class = "content-wrapper">
-  <img src="me.jpg" alt="me" width="300" />
-  <div class="text-block">
-  <h2> Northwestern Engineering & Clarinet Performance ♩ 18 </h2>
-  <h3> Hi! I'm passionate about web development, AI, data ethics, 
-    and human geography. Music is central to my life—I've studied the clarinet for 10 years, and I'm 
-    excited to explore the intersection of technology and the arts, especially by creating apps and 
-    AI tools that support musicians. I also enjoy running, baking, and writing. Feel free to 
-    reach out! </h3> 
+  <img src="me.jpg" alt="portrait of hannah" width="300" />
+  <div class="text-block"> <!-- creates flexible container that aligns elements in a column -->
+  <h2>Northwestern Engineering & Clarinet Performance ♩ 18</h2>
+  <p>Hi! I'm passionate about web development, AI, data ethics, and human geography. Music is central to my life—I've studied the clarinet for 10 years, and I'm excited to explore the intersection of technology and the arts, especially by creating apps and AI tools that support musicians. I also enjoy running, baking, and writing. Feel free to reach out!</p> 
   <div class="icon-row"> <!-- icons -->
-      <a href="https://github.com/hannah7webb" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="mailto:hannahwebb2028@u.northwestern.edu"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/hannah-webb-5aaaba330" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://youtube.com/@hannah7clarinet?si=2xyEB6kSi9V0f5bI" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://github.com/hannah7webb" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="mailto:hannahwebb2028@u.northwestern.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/hannah-webb-5aaaba330" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://youtube.com/@hannah7clarinet?si=2xyEB6kSi9V0f5bI" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
   </div>
   </div>
   </div>
+  </main>
 
+  <footer> <!-- closing-related content -->
   <div class="line" style="height: 1px; margin-top: 100px;"></div>
-  <h4>Website created by Hannah Webb</h4>
+  <p>Website created by Hannah Webb</p>
+  </footer>
+
 </body> <!-- ends visible page content -->
 </html>
