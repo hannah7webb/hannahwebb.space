@@ -44,12 +44,7 @@
   </header>
 
 <main>
-  <div style="display: flex; justify-content: center; margin-top: -10px;">
-    <button onclick="signInWithGoogle()" class="back-button" style="display: flex; align-items: center; padding: 12px 3%; ">
-      <i class="fab fa-google" style="font-size: 16px; margin-right: 4px;"></i>
-      Sign in with Google
-    </button>
-  </div>
+    <p style="text-align: center; font-family: 'Karla'; font-size: 18px;">Welcome to your dashboard!</p>
 </main>
 
   <footer> <!-- closing-related content -->
@@ -57,9 +52,9 @@
   <p>Website created by Hannah Webb</p>
   </footer>
 
-  <script type="module">
+ <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
-  import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-analytics.js";
 
   // Your Firebase config
@@ -77,18 +72,16 @@
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
   const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
 
-    onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        window.location.href = "tutti-nu-lite.html";
-      } else {
-        console.log("User is signed in as:", user.email);
-      }
-    });
-
+  // ✅ CHECK if user is signed in
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      window.location.href = "tutti-nu-lite.html"; // send to login if not signed in
+    } else {
+      console.log("User is signed in as:", user.email);
+    }
+  });
 </script>
-
 
 </body> <!-- ends visible page content -->
 </html>
