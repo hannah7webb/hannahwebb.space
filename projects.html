@@ -17,17 +17,20 @@
     html { scroll-behavior: smooth; }
     h1 { color: #000000; font-size: 70px; font-weight: 100; margin-top: 50px; margin-bottom: 24px; } /* styling of HTML tags (structures) */
     h2 { color: #000000; font-size: 18px; font-family: 'Karla'; margin-top: 26px; padding: 0 17.5%; text-align: left;}
+    h3 { color: #000000; font-family: 'Karla';}
+
     footer p { color: #000000; font-size: 12px; font-family: 'Karla'; text-align: left; margin: 0 17.5%; }
     nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 90px; margin: 10px 0; } /* a = links in CSS */
     nav a { color: #000000; text-decoration: none; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
     body { font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; margin: 0; padding: 20px; }
-
+ 
     .home-link { text-decoration: none; color: inherit; } /* styling of HTML classes (features defined in body) */
     .line { width: 65%; height: 2px; background-color: black; margin: 5px auto; }
     .content-wrapper { display: flex; flex-direction: row; align-items: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; text-align: center; }
     .content-wrapper img { margin: 0 auto; border-radius: 7%; max-width: 95%; height: auto; margin-top: -20px; }
     .project-grid { text-decoration: none; width: 65%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 20px ; margin: 0 auto; }
     .project-card { text-decoration: none; margin-top: 20px; background-color: #e8e8e8; border-radius: 12px; padding: 20px; text-align: left; box-shadow: 0 8px 20px rgba(0,0,0,0.25); text-decoration: none; color: #000; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .tool-buttons { text-decoration: none; margin-top: 20px; background-color: #525252; border-radius: 6px; padding: 20px; text-align: left; box-shadow: 0 8px 20px rgba(0,0,0,0.25); text-decoration: none; color: #000; transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .fade-section { animation: fadeInUp 1s ease forwards; }
     a.fade-section { text-decoration: none; color: inherit; }
 
@@ -37,9 +40,9 @@
     h2 { font-size: 16px; padding: 0 27px; width: 90%; }
     footer p { font-size: 10px; margin: 0 5%;}
     nav a { font-size: 16px; }
-    nav {gap: 30px;}
+    nav { gap: 30px; }
     .line { width: 90%; } 
-    .project-grid {width: 90%;}}
+    .project-grid { width: 90%; }}
 
     h1:hover { color: #414141; } /* styling when hovering over links */
     nav a:hover { color: #535353; }
@@ -64,17 +67,20 @@
 
   <a href="index.html" class="fade-section">
   <div class = "project-card">
-  <h3 style="font-family: Karla;">Personal Website</h3>
+  <h3>Personal Website</h3>
   <div class = "content-wrapper img">
   <img src="website.jpg" alt="website" width="300"/>
   </div>
+
+  <div class = "tool-buttons">hi</div>
+
   <p style="font-family: Karla;">built from scratch with HTML and CSS, featuring responsive/mobile-friendly layout, embedded YouTube content, custom Google Fonts, Font Awesome icons, and page-load animations </p>
   </div>
   </a>
 
   <a href="tuttinu-lite.html" class="fade-section">
   <div class = "project-card">
-  <h3 style="font-family: Karla;">Tutti NU Lite</h3>
+  <h3>Tutti NU Lite</h3>
   <div class = "content-wrapper img">
   <img src="tuttinulite.png" alt="website" width="300"/>
   </div>

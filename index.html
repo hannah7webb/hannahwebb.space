@@ -1,29 +1,55 @@
 <!DOCTYPE html> <!-- tells browser we're using HTML -->
 <html lang="en"> <!-- starts HTML document, english -->
-<head> <!-- contains meta information (not shown) -->
+<head> <!-- contains meta information (not shown on webpage) -->
 
-  <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet"> <!-- imports Kosugi Maru font -->
-  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@100;400;700&display=swap" rel="stylesheet"> <!-- imports Karla font -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"> <!-- imports icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet"> <!-- imports Kosugi Maru font from Google API -->
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@100;400;700&display=swap" rel="stylesheet"> <!-- imports Karla font from Google API -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"> <!-- imports icons from font-awesome API -->
+  
+  <!-- API = application programming interface (e.g. using Google as a service to pull fonts in via a URL) -->
+  <!-- in short, APIs are menus that let you access someone else's system -->
+  <!-- rel = relationship; here, tells browser to interpret links as stylesheet values -->
+  <!-- href = hyperlink reference; here, tells browser the url of the resource -->
+  <!-- *note* all light blue keywords in VS Code are html attributes that sit inside tags and provide additional information about the element! -->
 
-  <meta charset="UTF-8" /> <!-- character encoding -->
+  <meta charset="UTF-8" /> <!-- character encoding (UTF-8 is a common one) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- sets page width to width of device, zoom level to 100% -->
   
-  <link rel="icon" type="image/png" href="favicon.png" /> <!-- sets tab icon -->
-  <title>Hannah Webb</title> <!-- sets tab title -->
+  <link href="favicon.png" rel="icon" type="image/png"> <!-- sets tab icon: link to image, interpret as icon, expect a png image file -->
+  <title>Hannah Webb</title> <!-- sets tab title (built into html to display this text on tab) -->
 
   <style> /* block of internal CSS */
-  
-    html { scroll-behavior: smooth; }
-    h1 { color: #000000; font-size: 70px; font-weight: 100; margin-top: 42px; margin-bottom: 24px; } /* styling of HTML tags (structures) */
-    h2 { color: #000000; font-weight: 700; font-size: 19px; font-family: 'Karla'; margin: 0; max-width: 560px; text-align: left; }
+
+    /* styling of HTML tags--text */
+    h1 { color: #000000; font-size: 70px; font-weight: 100; margin-top: 42px; margin-bottom: 24px; } 
+    h2 { color: #000000; font-size: 19px; font-weight: 700; font-family: 'Karla'; margin: 0; max-width: 560px; text-align: left; }
     p { color: #000000; font-size: 18px; font-family: 'Karla'; margin-top: 20px; max-width: 600px; text-align: left; }
     footer p { color: #000000; font-size: 12px; font-family: 'Karla'; text-align: left; margin: 0 17.5%; }
-    nav { display: flex; justify-content: center; gap: 90px; margin: 10px 0; } /* a = links in CSS */
-    nav a { color: #000000; text-decoration: none; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
-    body { font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; padding: 20px; }
+    /* can give our attributes specific values to style each tag--called CSS properties */
+    /* margins are amt of space between current element and other elements */
+    /* max-width is the max size of the container that the text can sit in */
+    /* text-align sets the side that the text auto aligns to */
 
-    .home-link { text-decoration: none; color: inherit; } /* styling of HTML classes (features defined in body) */
+    /* styling of HTML tags--navigation bar */
+    nav { display: flex; justify-content: center; gap: 90px; margin: 10px 0; } 
+    nav a { color: #000000; text-decoration: none; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
+    /* display: flex; turns container of nav bar into a flexbox--where elements are arranged in a row by default */
+    /* justify-content is a unique property of the flexbox; it sets the alignment of the items within the container--center, left, right, etc.*/
+    /* gap is another property unique to the flexbox; it sets the spacing between flex items--it's cleaner than using margin on each child. */
+    /* a = links in CSS -- here we use a to style the navigation links */
+    /* text-decoration: none; styles links to have no underline */
+    /* padding: 2px; adds 2px of internal space inside each link (between the text and its edges) */
+    /* transition: color 0.3s; enables animation to change color over a 0.3s period */
+
+
+    /* styling of HTML tag--body */
+    body { font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; padding: 20px; }
+    /* styling the body tag sets default styles for the whole page, helping you avoid redundant code */
+    /* most elements inside the body will inherit these styles unless overriden by more specific attributes */
+    /* here, we style the background of our webpage to white, apply the kosugi maru font, center inline content, and add 20px of padding around everything */
+
+    /* styling of HTML classes--features defined in body */
+    .home-link { text-decoration: none; color: inherit; } 
     .line { width: 65.75%; height: 2px; background-color: black; margin: 5px auto; }
     .text-block { display: flex; flex-direction: column; }
     .icon-row { margin-top: auto; display: flex; gap: 16px; font-size: 22px; }
@@ -78,5 +104,5 @@
   <p>Website created by Hannah Webb</p>
   </footer>
 
-</body> <!-- ends visible page content -->
+  </body> <!-- ends visible page content -->
 </html>
