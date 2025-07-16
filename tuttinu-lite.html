@@ -92,8 +92,7 @@ window.addEventListener("load", () => {
       if (result && result.user) {
         const email = result.user.email;
         if (
-          email.endsWith("@northwestern.edu") ||
-          email.endsWith("@u.northwestern.edu")
+          email.endsWith("@northwestern.edu") || email.endsWith("@u.northwestern.edu")
         ) {
           // ✅ valid user
           window.location.href = "tutti-nu-lite-dashboard.html";
