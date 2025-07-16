@@ -90,9 +90,20 @@ window.addEventListener("load", () => {
   getRedirectResult(auth)
     .then((result) => {
       if (result && result.user) {
-        console.log("Signed in as:", result.user.email);
-        alert("Welcome, " + result.user.displayName);
-        window.location.href = "tutti-nu-lite-dashboard.html";
+        const user = result.user;
+        const email = user.email;
+
+        // Check if email is a Northwestern email
+        if (email.endsWith("@u.northwestern.edu") || email.endsWith("@northwestern.edu")) {
+          console.log("Signed in as:", email);
+          alert("Welcome, " + user.displayName);
+
+          // Redirect to dashboard after successful login
+          window.location.href = "tutti-nu-lite-dashboard.html";
+        } else {
+          alert("Please use a Northwestern email.");
+          signOut(auth); // Sign out if wrong domain
+        }
       } else {
         console.log("No redirect result.");
       }
@@ -101,6 +112,7 @@ window.addEventListener("load", () => {
       console.error("Sign-in error:", error.code, error.message);
     });
 });
+
 </script>
 
 </body> <!-- ends visible page content -->
