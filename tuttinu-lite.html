@@ -86,7 +86,7 @@ window.signInWithGoogle = () => {
 };
 
 // Handle redirect result when page loads
-window.addEventListener("load", () => {
+
   getRedirectResult(auth)
     .then((result) => {
       if (result && result.user) {
@@ -111,7 +111,6 @@ window.addEventListener("load", () => {
     .catch((error) => {
       console.error("Sign-in error:", error.code, error.message);
     });
-});
 
 </script>
 
