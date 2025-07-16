@@ -87,32 +87,18 @@ window.signInWithGoogle = () => {
 };
 
 // Handle redirect result when page loads
-getRedirectResult(auth)
-  .then((result) => {
-    if (!result) {
-      console.log("No redirect result — user may not be logged in yet.");
-      return;
-    }
-
-    const user = result.user;
-    const email = user.email;
-
-    if (email.endsWith("@u.northwestern.edu") || email.endsWith("@northwestern.edu")) {
-      alert("Welcome, " + user.displayName);
-      window.location.href = "tutti-nu-lite-dashboard.html";
-      // TODO: Show post-login UI or redirect
-    } else {
-      alert("Please use a Northwestern email.");
-      signOut(auth);
-    }
-  })
-  .catch((error) => {
-    console.error("Redirect sign-in error:", error.code, error.message);
-  });
-
-
+  getRedirectResult(auth)
+    .then((result) => {
+      if (result && result.user) {
+        console.log("Signed in as:", result.user.email);
+        alert("Welcome, " + result.user.displayName);
+        window.location.href = "tutti-nu-lite-dashboard.html";
+      }
+    })
+    .catch((error) => {
+      console.error("Sign-in error:", error.code, error.message);
+    });
 </script>
-
 
 </body> <!-- ends visible page content -->
 </html>
