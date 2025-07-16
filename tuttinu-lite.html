@@ -17,11 +17,12 @@
     html { scroll-behavior: smooth; }
 
     footer p { color: #000000; font-size: 12px; font-family: 'Karla'; text-align: left; margin: 0 1.5%; }
-    h1 { color: #000000; font-size: 36px; font-family: 'Poppins'; text-align: center; margin-top: 80px; }
+    h1 { color: #000000; font-size: 36px; font-family: 'Poppins'; text-align: center; margin-top: 200px; }
     h2 { color: #000000; font-size: 18px; font-family: 'Poppins'; margin: 10px 10px; }
 
     .line { width: 97%; height: 2px; background-color: black; margin: 5px auto; }
-    .back-button { display: inline-block; margin: 20px; padding: 10px 16px; font-family: Karla, sans-serif; font-size: 16px; color: #000; background-color: #e8e8e8; text-decoration: none; border-radius: 8px; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: background-color 0.3s ease; }
+    .back-button { position: fixed; top: 20px; left: 20px; z-index: 1000;display: inline-block; margin: 20px; padding: 10px 16px; font-family: Karla, sans-serif; font-size: 16px; color: #000; background-color: #e8e8e8; text-decoration: none; border-radius: 8px; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: background-color 0.3s ease; }
+    .signin-button { display: inline-block; margin: 20px; padding: 10px 16px; font-family: Karla, sans-serif; font-size: 16px; color: #000; background-color: #e8e8e8; text-decoration: none; border-radius: 8px; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: background-color 0.3s ease; }
     .back-button:hover { background-color: #d6d6d6; }
 
     @media (max-width: 768px) { /* styling that overrides when screen is 768px wide or smaller */
@@ -44,7 +45,7 @@
 
 <main>
   <div style="display: flex; justify-content: center; margin-top: -10px;">
-    <button onclick="signInWithGoogle()" class="back-button" style="display: flex; align-items: center; padding: 12px 3%; ">
+    <button onclick="signInWithGoogle()" class="signin-button" style="display: flex; align-items: center; padding: 12px 3%; ">
       <i class="fab fa-google" style="font-size: 16px; margin-right: 4px;"></i>
       Sign in with Google
     </button>
@@ -52,7 +53,7 @@
 </main>
 
   <footer> <!-- closing-related content -->
-  <div class="line" style="height: 1px; margin-top: 500px;"></div>
+  <div class="line" style="height: 1px; margin-top: 600px;"></div>
   <p>Website created by Hannah Webb</p>
   </footer>
 
