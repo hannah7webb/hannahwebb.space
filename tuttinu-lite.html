@@ -87,17 +87,21 @@ window.signInWithGoogle = () => {
 };
 
 // Handle redirect result when page loads
+window.addEventListener("load", () => {
   getRedirectResult(auth)
     .then((result) => {
       if (result && result.user) {
         console.log("Signed in as:", result.user.email);
         alert("Welcome, " + result.user.displayName);
         window.location.href = "tutti-nu-lite-dashboard.html";
+      } else {
+        console.log("No redirect result.");
       }
     })
     .catch((error) => {
       console.error("Sign-in error:", error.code, error.message);
     });
+});
 </script>
 
 </body> <!-- ends visible page content -->
