@@ -89,22 +89,26 @@ window.signInWithGoogle = () => {
 // Handle redirect result when page loads
 getRedirectResult(auth)
   .then((result) => {
-    if (result) {
-      const user = result.user;
-      const email = user.email;
+    if (!result) {
+      console.log("No redirect result — user may not be logged in yet.");
+      return;
+    }
 
-      if (email.endsWith("@u.northwestern.edu") || email.endsWith("@northwestern.edu")) {
-        alert("Welcome, " + user.displayName);
-        // TODO: Show post-login UI or redirect
-      } else {
-        alert("Please use a Northwestern email.");
-        signOut(auth);
-      }
+    const user = result.user;
+    const email = user.email;
+
+    if (email.endsWith("@u.northwestern.edu") || email.endsWith("@northwestern.edu")) {
+      alert("Welcome, " + user.displayName);
+      // TODO: Show post-login UI or redirect
+    } else {
+      alert("Please use a Northwestern email.");
+      signOut(auth);
     }
   })
   .catch((error) => {
-    console.error("Redirect sign-in error:", error);
+    console.error("Redirect sign-in error:", error.code, error.message);
   });
+
 
 </script>
 
