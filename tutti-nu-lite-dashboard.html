@@ -37,7 +37,6 @@
 
 <body> <!-- begins visible page content -->
 
-  
   <a href="projects.html" class="back-button">← Back</a>
   <h1>dashboard ♪</h1>
 
@@ -80,14 +79,13 @@
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
 
-  // Function to call on button click
-  // On click, start redirect-based sign-in
-window.signInWithGoogle = () => {
-  signInWithRedirect(auth, provider);
-};
-
-// Handle redirect result when page loads
-
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = "tutti-nu-lite.html";
+      } else {
+        console.log("User is signed in as:", user.email);
+      }
+    });
 
 </script>
 
