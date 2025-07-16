@@ -86,23 +86,20 @@ window.signInWithGoogle = () => {
 };
 
 // Handle redirect result when page loads
-
+window.addEventListener("load", () => {
   getRedirectResult(auth)
     .then((result) => {
       if (result && result.user) {
         const user = result.user;
         const email = user.email;
 
-        // Check if email is a Northwestern email
         if (email.endsWith("@u.northwestern.edu") || email.endsWith("@northwestern.edu")) {
           console.log("Signed in as:", email);
           alert("Welcome, " + user.displayName);
-
-          // Redirect to dashboard after successful login
           window.location.href = "tutti-nu-lite-dashboard.html";
         } else {
           alert("Please use a Northwestern email.");
-          signOut(auth); // Sign out if wrong domain
+          signOut(auth);
         }
       } else {
         console.log("No redirect result.");
@@ -111,6 +108,7 @@ window.signInWithGoogle = () => {
     .catch((error) => {
       console.error("Sign-in error:", error.code, error.message);
     });
+});
 
 </script>
 
