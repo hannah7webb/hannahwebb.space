@@ -64,7 +64,7 @@
 
   <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
-  import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+  import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-analytics.js";
 
   // Your Firebase config
@@ -85,25 +85,31 @@
   const provider = new GoogleAuthProvider();
 
   // Function to call on button click
-  window.signInWithGoogle = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const user = result.user;
-        const email = user.email;
+  // On click, start redirect-based sign-in
+window.signInWithGoogle = () => {
+  signInWithRedirect(auth, provider);
+};
 
-        if (email.endsWith("@u.northwestern.edu") || email.endsWith("@northwestern.edu")) {
-          alert("Welcome, " + user.displayName);
-          // TODO: redirect or show next UI
-        } else {
-          alert("Please use a Northwestern email.");
-          signOut(auth);
-        }
-      })
-      .catch((error) => {
-        console.error("Sign in error:", error);
-        alert("Google sign-in failed. Try again.");
-      });
-  };
+// Handle redirect result when page loads
+getRedirectResult(auth)
+  .then((result) => {
+    if (result) {
+      const user = result.user;
+      const email = user.email;
+
+      if (email.endsWith("@u.northwestern.edu") || email.endsWith("@northwestern.edu")) {
+        alert("Welcome, " + user.displayName);
+        // TODO: Show post-login UI or redirect
+      } else {
+        alert("Please use a Northwestern email.");
+        signOut(auth);
+      }
+    }
+  })
+  .catch((error) => {
+    console.error("Redirect sign-in error:", error);
+  });
+
 </script>
 
 
