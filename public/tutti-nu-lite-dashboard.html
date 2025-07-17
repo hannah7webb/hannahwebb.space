@@ -52,36 +52,5 @@
   <p>Website created by Hannah Webb</p>
   </footer>
 
- <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
-  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-analytics.js";
-
-  // Your Firebase config
-  const firebaseConfig = {
-    apiKey: "AIzaSyDKHRcyCqoEZsqYYlPn27eyNtiNaU5xh-4",
-    authDomain: "tutti-nu-lite.firebaseapp.com",
-    projectId: "tutti-nu-lite",
-    storageBucket: "tutti-nu-lite.appspot.com",
-    messagingSenderId: "941649168233",
-    appId: "1:941649168233:web:79617ad29fb63f35a39ff8",
-    measurementId: "G-CFW9LH4SCM"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  const auth = getAuth(app);
-
-  // ✅ CHECK if user is signed in
-  onAuthStateChanged(auth, (user) => {
-    if (!user) {
-      window.location.href = "tutti-nu-lite.html"; // send to login if not signed in
-    } else {
-      console.log("User is signed in as:", user.email);
-    }
-  });
-</script>
-
 </body> <!-- ends visible page content -->
 </html>
