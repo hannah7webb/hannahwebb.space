@@ -93,6 +93,8 @@ window.signInWithGoogle = () => {
 };
 
 // Handle redirect result when page loads
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
 window.addEventListener("load", () => {
   getRedirectResult(auth)
     .then((result) => {
@@ -101,18 +103,33 @@ window.addEventListener("load", () => {
         if (
           email.endsWith("@northwestern.edu") || email.endsWith("@u.northwestern.edu")
         ) {
-          // ✅ valid user
           window.location.href = "tutti-nu-lite-dashboard.html";
         } else {
           alert("Use your Northwestern email.");
           signOut(auth);
         }
+      } else {
+        // 👀 also check if the user is already signed in
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            const email = user.email;
+            if (
+              email.endsWith("@northwestern.edu") || email.endsWith("@u.northwestern.edu")
+            ) {
+              window.location.href = "tutti-nu-lite-dashboard.html";
+            } else {
+              alert("Use your Northwestern email.");
+              signOut(auth);
+            }
+          }
+        });
       }
     })
     .catch((error) => {
       console.error("Redirect error:", error);
     });
 });
+
 </script>
 
 </body> <!-- ends visible page content -->
