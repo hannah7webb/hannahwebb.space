@@ -44,6 +44,7 @@
 
     /* styling of HTML tag--body */
     body { font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; padding: 20px; }
+    img { margin: 20px; border-radius: 7%; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);  }
     /* styling the body tag sets default styles for the whole page, helping you avoid redundant code */
     /* most elements inside the body will inherit these styles unless overriden by more specific attributes */
     /* here, we style the background of our webpage to white, apply the kosugi maru font, center inline content, and add 20px of padding around everything */
@@ -51,21 +52,25 @@
     /* styling of HTML classes--features defined in body */
     .home-link { text-decoration: none; color: inherit; } 
     .line { width: 65.75%; height: 2px; background-color: black; margin: 5px auto; }
-    .text-block { display: flex; flex-direction: column; }
-    .icon-row { margin-top: auto; display: flex; gap: 16px; font-size: 22px; }
+
+    .text { font-family: Karla; text-align: left; width: 65.75%; margin: 0 auto; }
+
+    .icon-row { margin-top: auto; display: flex; gap: 16px; font-size: 22px; margin: auto auto;}
     .icon-row a { color: #000; text-decoration: none; }
-    .content-wrapper { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; text-align: left; }
-    .content-wrapper img { border-radius: 7%; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5); max-width: 50vw; height: auto; margin-top: 20px; }
+    /* by using classes, you are labeling a group of styles that you can apply to your html elements */
+    /* when an html tag is inside another html tag, the inner tag is called the child and the outer tag is called the parent */
+    /* you can style the child by writing .parent child */
 
     @media (max-width: 768px) { /* styling that overrides when screen is 768px wide or smaller */
     h1 { font-size: 40px; } 
     h2 { font-size: 16px; } 
     p { font-size: 14px; }
+    img { width: 200px; }
     footer p { font-size: 10px; margin: 0 5%; }
     nav a { font-size: 16px; }
     nav { gap: 30px; }
     .line { width: 93.25%; } 
-    .content-wrapper { width: 90%; flex-direction: column; text-align: center; align-items: center; margin-left: 20px; }}
+    .text { width: 93.25%; } }
 
     h1:hover { color: #414141; } /* styling when hovering over links */
     nav a:hover { color: #535353; }
@@ -84,11 +89,13 @@
   </header>
 
   <main> <!-- webpage's meat content -->
-  <div class = "content-wrapper">
-  <img src="me.jpg" alt="portrait of hannah" width="300" />
-  <div class="text-block"> <!-- creates flexible container that aligns elements in a column -->
-  <h2>Northwestern Computer Science & Clarinet Performance ♩ 18</h2>
-  <p>Hi! I'm passionate about web development, AI, data ethics, and human geography. Music is central to my life—I've studied the clarinet for 10 years, and I'm excited to explore the intersection of technology and the arts, especially by creating apps and AI tools that support musicians. I also enjoy running, baking, and writing. Feel free to reach out!</p> 
+
+  <div class="content-wrapper">
+  <img src="me.jpg" alt="portrait of hannah" width="300px" />
+
+  <div class="text">
+  <b>Northwestern Computer Science & Clarinet Performance ♩ 18</b>
+  <div style="margin: 10px 0;">Hi! I'm passionate about web development, AI, data ethics, and human geography. Music is central to my life—I've studied the clarinet for 10 years, and I'm excited to explore the intersection of technology and the arts, especially by creating apps and AI tools that support musicians. I also enjoy running, baking, and writing. Feel free to reach out!</div> 
   <div class="icon-row"> <!-- icons -->
     <a href="https://github.com/hannah7webb" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
     <a href="mailto:hannahwebb2028@u.northwestern.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
@@ -96,7 +103,10 @@
     <a href="https://youtube.com/@hannah7clarinet?si=2xyEB6kSi9V0f5bI" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
   </div>
   </div>
-  </div>
+  </div> 
+
+
+
   </main>
 
   <footer> <!-- closing-related content -->
