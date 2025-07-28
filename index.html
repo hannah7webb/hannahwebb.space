@@ -44,7 +44,7 @@
 
     /* styling of HTML tag--body */
     body { font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; padding: 20px; }
-    img { margin: 20px; border-radius: 7%; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);  }
+    img { margin: 16px; border-radius: 7%; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5); width: 30%; min-width: 250px; }
     /* styling the body tag sets default styles for the whole page, helping you avoid redundant code */
     /* most elements inside the body will inherit these styles unless overriden by more specific attributes */
     /* here, we style the background of our webpage to white, apply the kosugi maru font, center inline content, and add 20px of padding around everything */
@@ -52,16 +52,15 @@
     /* styling of HTML classes--features defined in body */
     .home-link { text-decoration: none; color: inherit; } 
     .line { width: 65.75%; height: 2px; background-color: black; margin: 5px auto; }
-
-    .text { font-family: Karla; text-align: left; width: 65.75%; margin: 0 auto; }
-
+    .content-wrapper { display: flex; align-items: center; width: 65.75%; margin: 0 auto; }
+    .text { font-family: Karla; text-align: left; width: 65.75%; margin: 24px 16px; }
     .icon-row { margin-top: auto; display: flex; gap: 16px; font-size: 22px; margin: auto auto;}
     .icon-row a { color: #000; text-decoration: none; }
     /* by using classes, you are labeling a group of styles that you can apply to your html elements */
     /* when an html tag is inside another html tag, the inner tag is called the child and the outer tag is called the parent */
     /* you can style the child by writing .parent child */
 
-    @media (max-width: 768px) { /* styling that overrides when screen is 768px wide or smaller */
+    @media (max-width: 890px) { /* styling that overrides when screen is 768px wide or smaller */
     h1 { font-size: 40px; } 
     h2 { font-size: 16px; } 
     p { font-size: 14px; }
@@ -70,7 +69,8 @@
     nav a { font-size: 16px; }
     nav { gap: 30px; }
     .line { width: 93.25%; } 
-    .text { width: 93.25%; } }
+    .text { width: 93.25%; margin: 10px 0px;} 
+    .content-wrapper { flex-direction: column; width: 93.25%; }}
 
     h1:hover { color: #414141; } /* styling when hovering over links */
     nav a:hover { color: #535353; }
@@ -89,10 +89,8 @@
   </header>
 
   <main> <!-- webpage's meat content -->
-
   <div class="content-wrapper">
-  <img src="me.jpg" alt="portrait of hannah" width="300px" />
-
+  <img src="me.jpg" alt="portrait of hannah"/>
   <div class="text">
   <b>Northwestern Computer Science & Clarinet Performance ♩ 18</b>
   <div style="margin: 10px 0;">Hi! I'm passionate about web development, AI, data ethics, and human geography. Music is central to my life—I've studied the clarinet for 10 years, and I'm excited to explore the intersection of technology and the arts, especially by creating apps and AI tools that support musicians. I also enjoy running, baking, and writing. Feel free to reach out!</div> 
@@ -101,12 +99,10 @@
     <a href="mailto:hannahwebb2028@u.northwestern.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
     <a href="https://www.linkedin.com/in/hannah-webb-5aaaba330" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
     <a href="https://youtube.com/@hannah7clarinet?si=2xyEB6kSi9V0f5bI" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.instagram.com/hannahwebb_7/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
   </div>
   </div>
-  </div> 
-
-
-
+  </div>
   </main>
 
   <footer> <!-- closing-related content -->
