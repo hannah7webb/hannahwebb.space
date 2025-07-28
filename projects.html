@@ -33,6 +33,7 @@
     .tool-buttons { text-decoration: none; background-color: #cdcdcd; border-radius: 6px; padding: 5px 10px; text-align: left; }
     .fade-section { animation: fadeInUp 1s ease forwards; }
     a.fade-section { text-decoration: none; color: inherit; }
+    .bullets li {font-family: 'Karla'; font-size: 14px; margin: 12px 0; }
 
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 768px) { /* styling that overrides when screen is 768px wide or smaller */
@@ -74,11 +75,14 @@
   <img src="website.jpg" alt="website" width="300"/>
   </div>
 
-  <p style="font-family: Karla;"> an early step in becoming a developer: a personal website built to showcase my interests in tech and the arts, and to serve as a foundation for future full-stack projects. <br><br>webpage featuring responsive layout, embedded YouTube content, custom Google Fonts, Font Awesome icons, page-load animations, fixed bottom gradient overlay, project cards with hover transforms, and flexbox styling.
-<br><br>
-practiced structuring content with semantic HTML elements for clarity and accessibility, css flexbox, grid, connecting to external APIs (Google Fonts, Font Awesome), interactive hover effects & fade in animations, initializing & managing git repo via descriptive commit messages, and deploying webpages to a live server/domain.
-</p>
-  
+ <div class = "bullets">
+  <ul>
+    <li>A personal website built to showcase my interests and future full-stack projects.</li>
+    <li>Features responsive layout, embedded YouTube content, custom Google Fonts, Font Awesome icons, page-load animations, fixed bottom gradient overlay, project cards with hover transforms, and flexbox styling.</li>
+    <li>I practiced structuring content with semantic HTML elements for clarity and accessibility, css flexbox, grid, connecting to external APIs, interactive hover effects & fade in animations, initializing & managing git repo, and deploying webpages to a live server/domain.</li>
+  </ul>
+</div>
+
   <div style = "display: flex; flex-wrap: wrap; gap: 20px; color: #4e4e4e; font-family: Karla; font-size: 14px;">
   <div class = "tool-buttons">html</div>
   <div class = "tool-buttons">css</div>
