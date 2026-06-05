@@ -11,8 +11,8 @@
     html.dark body { color: #a4a7bd; background-color: transparent; }
 
     /* headings */
-    html.dark h2, html.dark h3 { color: #e7e8f0; }
-    html.dark h4 { color: #a4a7bd; }
+    html.dark h2, html.dark h3 { color: #a4a7bd; }
+    html.dark h4 { color: #a4a7bd }
     html.dark h5 { color: #585b73; }
     html.dark p  { color: #a4a7bd; }
     html.dark b  { color: #e7e8f0; }
@@ -61,7 +61,6 @@
 
     /* footer / attribution */
     html.dark footer p { color: #585b73; }
-    html.dark h4, html.dark h5 { color: #585b73; }
 
     /* clarinet entry grid */
     html.dark .entry-grid .year        { color: #e7e8f0; }
