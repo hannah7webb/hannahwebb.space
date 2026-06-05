@@ -11,12 +11,12 @@
   const ctx = canvas.getContext('2d');
 
   // ── palettes ───────────────────────────────────────────────────────────────
-  const COLS = 16, ROWS = 10, AMP = 22, PAD = AMP * 2;
+  const COLS = 16, ROWS = 10, AMP = 34, PAD = AMP * 2;
 
   // light: warm gold / orange / pink / berry
   const LT = [[232,184,96],[232,150,110],[232,160,184],[200,120,152]];
-  // dark: near-black navy / teal / purple — channels clamped ≤ 80
-  const DK = [[18,24,44],[12,32,52],[24,18,44],[16,26,58]];
+  // dark: near-black with subtle iridescent teal / green / violet peaks
+  const DK = [[6,32,26],[24,6,36],[6,30,12],[30,6,26]];
 
   // ── state ──────────────────────────────────────────────────────────────────
   let W, H, verts;
@@ -54,7 +54,7 @@
           edge,
           phase: Math.random() * Math.PI * 2,
           freq:  0.5 + Math.random() * 0.5,
-          co:    (Math.random() - 0.5) * 32,
+          co:    (Math.random() - 0.5) * 44,
         });
       }
     }
@@ -62,8 +62,8 @@
 
   function getPos(v) {
     if (v.edge) return { x: v.bx, y: v.by };
-    const wave  = Math.sin(v.bx / (W * 0.28) - t * 1.3 + v.phase) * AMP;
-    const swell = Math.sin(v.by / (H * 0.4)  + t * v.freq * 0.5 + v.phase) * (AMP * 0.35);
+    const wave  = Math.sin(v.bx / (W * 0.28) - t * 2.2 + v.phase) * AMP;
+    const swell = Math.sin(v.by / (H * 0.4)  + t * v.freq * 0.9 + v.phase) * (AMP * 0.5);
     return { x: v.bx + swell * 0.25, y: v.by + wave + swell };
   }
 
@@ -76,7 +76,7 @@
 
     const pal = darkMode ? DK : LT;
     const [tl, tr, bl, br] = pal;
-    const lo = darkMode ? 0 : 80, hi = darkMode ? 80 : 255;
+    const lo = darkMode ? 8 : 80, hi = darkMode ? 245 : 255;
 
     const r  = Math.min(hi, Math.max(lo, Math.round(lerp(lerp(tl[0],tr[0],mx), lerp(bl[0],br[0],mx), my) + co)));
     const g  = Math.min(hi, Math.max(lo, Math.round(lerp(lerp(tl[1],tr[1],mx), lerp(bl[1],br[1],mx), my) + co * 0.55)));
@@ -85,13 +85,13 @@
     ctx.beginPath();
     ctx.moveTo(pa.x, pa.y); ctx.lineTo(pb.x, pb.y); ctx.lineTo(pc.x, pc.y);
     ctx.closePath();
-    ctx.fillStyle   = `rgba(${r},${g},${bv},0.88)`;
+    ctx.fillStyle = `rgba(${r},${g},${bv},0.88)`;
     ctx.fill();
-    ctx.strokeStyle = darkMode
-      ? 'rgba(130,150,210,0.10)'
-      : `rgba(${Math.max(0,r-15)},${Math.max(0,g-15)},${Math.max(0,bv-15)},0.15)`;
-    ctx.lineWidth = 0.6;
-    ctx.stroke();
+    if (!darkMode) {
+      ctx.strokeStyle = `rgba(${Math.max(0,r-15)},${Math.max(0,g-15)},${Math.max(0,bv-15)},0.15)`;
+      ctx.lineWidth = 0.6;
+      ctx.stroke();
+    }
   }
 
   // ── RAF loop: ~30 fps cap, pauses when tab hidden ──────────────────────────
@@ -119,7 +119,7 @@
     ctx.fillStyle = bg;
     ctx.fillRect(0, 0, W, H);
 
-    t += 0.003; // halved increment to keep same apparent speed at 30fps
+    t += 0.007;
     const w1 = COLS + 1;
     for (let r = 0; r < ROWS; r++) {
       for (let c = 0; c < COLS; c++) {

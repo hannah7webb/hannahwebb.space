@@ -8,7 +8,7 @@
   // ── dark-mode CSS ──────────────────────────────────────────────────────────
   const DARK_CSS = `
     /* base */
-    html.dark body { color: #a4a7bd; background-color: #050507; }
+    html.dark body { color: #a4a7bd; background-color: transparent; }
 
     /* headings */
     html.dark h2, html.dark h3 { color: #e7e8f0; }
@@ -18,60 +18,19 @@
     html.dark b  { color: #e7e8f0; }
     html.dark li { color: #a4a7bd; }
 
-    /* "hannah webb" — teal→blue→purple gradient fill */
-    html.dark .home-link {
-      background: linear-gradient(90deg, #4fb8a8 0%, #6f93d6 50%, #9a7ad0 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
-    }
-    /* prevent h1:hover color from breaking the gradient */
-    html.dark h1:hover { color: transparent; -webkit-text-fill-color: transparent; }
+    /* "hannah webb" — plain white */
+    html.dark .home-link { color: #ffffff; -webkit-text-fill-color: #ffffff; }
+    html.dark h1:hover { color: #cccccc; -webkit-text-fill-color: #cccccc; }
 
-    /* nav — off-white + animated teal underline on hover */
+    /* nav — same behaviour as light mode, just lighter colours */
     html.dark nav a { color: rgba(231,232,240,0.82); }
-    html.dark nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px; left: 0;
-      width: 100%; height: 2px;
-      background-color: #4fb8a8;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-    }
-    html.dark nav a:hover { color: #e7e8f0; }
-    html.dark nav a:hover::after,
-    html.dark nav a.active::after { transform: scaleX(1); }
-    html.dark nav a.active { color: #e7e8f0; }
+    html.dark nav a:hover { color: rgba(231,232,240,0.3); }
+    html.dark nav a.active { color: rgba(231,232,240,0.3); }
 
-    /* photo — dark card with soft blue glow + hairline border */
-    html.dark img {
-      box-shadow:
-        0 0 0 1px rgba(111,147,214,0.25),
-        0 0 40px rgba(79,184,168,0.12),
-        0 12px 40px rgba(0,0,0,0.75);
-    }
 
-    /* social icons — outlined squares that lift on hover */
-    html.dark .icon-row { gap: 10px; }
-    html.dark .icon-row a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px; height: 34px;
-      border: 1px solid rgba(111,147,214,0.28);
-      border-radius: 6px;
-      color: #a4a7bd !important;
-      transition: all 0.25s ease;
-    }
-    html.dark .icon-row a:hover {
-      border-color: #4fb8a8;
-      color: #4fb8a8 !important;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 14px rgba(79,184,168,0.18);
-    }
+    /* social icons — same layout as light mode, white colour */
+    html.dark .icon-row a { color: rgba(255,255,255,0.75) !important; transition: color 0.3s; }
+    html.dark .icon-row a:hover { color: rgba(255,255,255,0.4) !important; }
 
     /* separator lines */
     html.dark .line { background-color: rgba(111,147,214,0.14); }
@@ -105,7 +64,7 @@
     html.dark h4, html.dark h5 { color: #585b73; }
 
     /* clarinet entry grid */
-    html.dark .entry-grid .year        { color: #6f93d6; }
+    html.dark .entry-grid .year        { color: #e7e8f0; }
     html.dark .entry-grid .description { color: #a4a7bd; }
 
     /* article body text (h4 in misinformation/music pages) */
@@ -122,8 +81,8 @@
     }
 
     /* the toggle button itself */
-    html.dark #dark-toggle { color: rgba(164,167,189,0.35); }
-    html.dark #dark-toggle:hover { color: #4fb8a8; }
+    html.dark #dark-toggle { color: rgba(255,255,255,0.85) !important; }
+    html.dark #dark-toggle:hover { color: rgba(255,255,255,0.4) !important; }
   `;
 
   // ── apply / remove theme ───────────────────────────────────────────────────
