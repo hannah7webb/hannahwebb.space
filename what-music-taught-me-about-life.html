@@ -19,11 +19,13 @@
     h3 { font-weight: 100; color: #5a5a5a; font-size: 12px; font-family: 'Karla'; text-align: left; margin: 0 17.5%; }
     h4 { font-weight: 100; color: #000000; font-size: 16px; font-family: 'Karla'; text-align: left; margin: 0 17.5%; margin-bottom: 15px;}
     h5 { color: #000000; font-size: 12px; font-family: 'Karla'; text-align: left; margin: 0 17.5%; }
+    header { padding-bottom: 0; }
+    header::after { content: ''; display: block; width: 65%; height: 1px; background-color: rgba(0,0,0,0.18); margin: 10px auto 0; }
     nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 90px; margin: 10px 0; } /* a = links in CSS */
-    nav a { text-decoration: none; color: #000000; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
+    nav a { text-decoration: none; color: #000000; font-weight: 400; font-size: 15px; padding: 2px; transition: color 0.3s; }
     body { font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; margin: 0; padding: 20px; }
     .home-link { text-decoration: none; color: inherit; } /* styling of HTML classes (features defined in body) */
-    .line { width: 65%; height: 2px; background-color: black; margin: 5px auto; }
+    .line { width: 65%; height: 1px; background-color: rgba(0,0,0,0.18); margin: 5px auto; }
     .img { width: 45%; margin: 15px 17.5%; }
 
     @media (max-width: 890px) { /* styling that overrides when screen is 768px wide or smaller */
@@ -32,13 +34,13 @@
     h3 { font-size: 10px; margin: 0 5%; }
     h4 { font-size: 13px; margin: 12px 5%;}
     h5 { font-weight: 100; font-size: 10px; margin: 0 5%; margin-bottom: 10px;}
-    nav a { font-size: 16px; }
+    nav a { font-size: 13px; }
     nav { gap: 30px; }
     .line { width: 90%; }
     .img { width: 75%; margin: 12px 5%;}}
 
     h1:hover { color: #414141; } /* styling when hovering over links */
-    nav a:hover { color: #535353; }
+    nav a:hover { color: rgba(0,0,0,0.3); }
     body::after { content: ""; position: fixed; bottom: 0; left: 0; width: 100%; height: 80px; pointer-events: none; background: linear-gradient(to top, rgb(140, 101, 115), rgba(255,255,255,0)); z-index: 10; }
 
   </style>
@@ -47,9 +49,7 @@
 <body>
 <header>
   <h1><a href="index.html" class="home-link">hannah webb</a></h1>
-  <div class="line"></div>
   <nav> <a href="projects.html">projects</a> <a href="clarinet.html">clarinet</a> <a href="writing.html">writing</a></nav>
-  <div class="line"></div>
 </header>
 <main>
   <h2>What Music Taught Me About Life</h2>

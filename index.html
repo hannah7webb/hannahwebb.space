@@ -31,9 +31,10 @@
     /* text-align sets the side that the text auto aligns to */
 
     /* styling of HTML tags--navigation bar */
+    header { padding-bottom: 0; }
+    header::after { content: ''; display: block; width: 65%; height: 1px; background-color: rgba(0,0,0,0.18); margin: 10px auto 0; }
     nav { display: flex; justify-content: center; gap: 90px; margin: 10px 0; } 
-    nav a { position: relative; color: #000000; text-decoration: none; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
-    nav a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background-color: #000000; transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
+    nav a { position: relative; color: #000000; text-decoration: none; font-weight: 400; font-size: 15px; padding: 2px; transition: color 0.3s; }
     /* display: flex; turns container of nav bar into a flexbox--where elements are arranged in a row by default */
     /* justify-content is a unique property of the flexbox; it sets the alignment of the items within the container--center, left, right, etc.*/
     /* gap is another property unique to the flexbox; it sets the spacing between flex items--it's cleaner than using margin on each child. */
@@ -54,7 +55,7 @@
 
     /* styling of HTML classes--features defined in body */
     .home-link { text-decoration: none; color: inherit; } 
-    .line { width: 65.75%; height: 2px; background-color: black; margin: 5px auto; }
+    .line { width: 65.75%; height: 1px; background-color: rgba(0,0,0,0.18); margin: 5px auto; }
     .content-wrapper { display: flex; align-items: center; width: 65.75%; margin: 16px auto; }
     .text { font-family: Karla; text-align: left; width: 65.75%; margin: 24px 16px; }
     .icon-row { margin-top: auto; display: flex; gap: 16px; font-size: 22px; margin: auto auto;}
@@ -69,26 +70,23 @@
     p { font-size: 14px; }
     img { width: 200px; }
     footer p { font-size: 10px; margin: 0 5%; }
-    nav a { font-size: 16px; }
+    nav a { font-size: 13px; }
     nav { gap: 30px; }
     .line { width: 93.25%; } 
     .text { width: 93.25%; margin: 10px 0px;} 
     .content-wrapper { flex-direction: column; width: 93.25%; }}
 
     h1:hover { color: #414141; } /* styling when hovering over links */
-    nav a:hover { color: #000000; }
-    nav a:hover::after, nav a.active::after { transform: scaleX(1); }
-    nav a.active { color: #000000; }
+    nav a:hover { color: rgba(0,0,0,0.3); }
+    nav a.active { color: rgba(0,0,0,0.3); }
     .icon-row a:hover { color: #000000; }
   </style>
   </head>
 
   <body> <!-- begins visible page content -->
   <header> <!-- intro-related content -->
-  <h1><a href="index.html" class="home-link">hannah webb</a></h1> 
-  <div class="line"></div>
+  <h1><a href="index.html" class="home-link">hannah webb</a></h1>
   <nav> <a href="projects.html">projects</a> <a href="clarinet.html">clarinet</a> <a href="writing.html">writing</a></nav>
-  <div class="line"></div>
   </header>
 
   <main> <!-- webpage's meat content -->
