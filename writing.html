@@ -20,15 +20,16 @@
     h4 { color: #000000; font-size: 12px; font-family: 'Karla'; margin-top: 10px; text-align: left; margin: 0 17.5%;}
     nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 90px; margin: 10px 0; } /* a = links in CSS */
     nav a { position: relative; text-decoration: none; color: #000000; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
-    nav a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background-color: #E8A090; transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
+    nav a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background-color: #000000; transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
     body { font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; margin: 0; padding: 20px; }
+    body::after { content: ""; position: fixed; bottom: 0; left: 0; width: 100%; height: 80px; pointer-events: none; background: linear-gradient(to top, rgb(140, 101, 115), rgba(255,255,255,0)); z-index: 10; }
 
     .home-link { text-decoration: none; color: inherit; } /* styling of HTML classes (features defined in body) */
     .line { width: 65%; height: 2px; background-color: black; margin: 5px auto; }
     .content-wrapper { display: flex; flex-direction: row; align-items: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; text-align: center; }
     .content-wrapper img { margin: 0 auto; border-radius: 7%; max-width: 95%; height: auto; margin-top: -20px;}
     .project-grid { text-decoration: none; width: 65%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 20px ; margin: 0 auto; }
-    .project-card { text-decoration: none; margin-top: 20px; background-color: #e8e8e8; border-radius: 12px; padding: 20px; text-align: left; box-shadow: 0 8px 20px rgba(0,0,0,0.25); text-decoration: none; color: #000; transition: transform 0.3s ease, box-shadow 0.3s ease;}
+    .project-card { text-decoration: none; margin-top: 20px; background-color: rgba(255,252,250,0.90); border-radius: 12px; padding: 20px; text-align: left; box-shadow: 0 8px 20px rgba(150,70,50,0.18); text-decoration: none; color: #000; transition: transform 0.3s ease, box-shadow 0.3s ease;}
     .fade-section { animation: fadeInUp 1s ease both; opacity: 0; transform: translateY(30px); }
     a.fade-section { text-decoration: none; color: inherit; }
 
@@ -46,22 +47,20 @@
     .project-grid { width: 90%; }}
 
     h1:hover { color: #414141; } /* styling when hovering over links */
-    nav a:hover { color: #E8A090; }
+    nav a:hover { color: #000000; }
     nav a:hover::after, nav a.active::after { transform: scaleX(1); }
-    nav a.active { color: #E8A090; }
-    body::after { content: ""; position: fixed; bottom: 0; left: 0; width: 100%; height: 80px; pointer-events: none; background: linear-gradient(to top, white, rgba(255,255,255,0)); z-index: 10; }
+    nav a.active { color: #000000; }
   </style>
 </head>
 
 <body> <!-- begins visible page content -->
-
 <header>
 <h1><a href="index.html" class="home-link">hannah webb</a></h1> 
 <div class="line"></div>
 <nav> <a href="projects.html">projects</a> <a href="clarinet.html">clarinet</a> <a href="writing.html" class="active">writing</a></nav>
 <div class="line"></div>
 </header>
-
+<main>
   <h2 style="margin-top: 26px; text-align: left;"> Sharing thoughts—click a card to read anything that interests you.</h2>
 
   <div class="project-grid">
@@ -116,6 +115,9 @@
 
   <div class="line" style="height: 1px; margin-top: 234px;"></div>
   <h4>Website created by Hannah Webb | Visuals generated with DALL·E, powered by OpenAI</h4>
+</main>
+<script src="router.js"></script>
+<script src="background.js"></script>
 </body> <!-- ends visible page content -->
 
 </html>

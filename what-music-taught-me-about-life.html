@@ -26,8 +26,6 @@
     .line { width: 65%; height: 2px; background-color: black; margin: 5px auto; }
     .img { width: 45%; margin: 15px 17.5%; }
 
-    body::after { content: ""; position: fixed; bottom: 0; left: 0; width: 100%; height: 80px; pointer-events: none; background: linear-gradient(to top, white, rgba(255,255,255,0)); z-index: 10; }
-
     @media (max-width: 890px) { /* styling that overrides when screen is 768px wide or smaller */
     h1 { font-size: 40px; }
     h2 { font-size: 20px; margin: 12px 5%; }
@@ -41,16 +39,19 @@
 
     h1:hover { color: #414141; } /* styling when hovering over links */
     nav a:hover { color: #535353; }
+    body::after { content: ""; position: fixed; bottom: 0; left: 0; width: 100%; height: 80px; pointer-events: none; background: linear-gradient(to top, rgb(140, 101, 115), rgba(255,255,255,0)); z-index: 10; }
+
   </style>
 </head>
 
 <body>
-  <h1><a href="index.html" class="home-link">hannah webb</a></h1> 
-
+<header>
+  <h1><a href="index.html" class="home-link">hannah webb</a></h1>
   <div class="line"></div>
   <nav> <a href="projects.html">projects</a> <a href="clarinet.html">clarinet</a> <a href="writing.html">writing</a></nav>
   <div class="line"></div>
-
+</header>
+<main>
   <h2>What Music Taught Me About Life</h2>
   <h3 style="margin-top: 10px;">By Hannah Webb</h3>
   <h3 style="margin-top: 2px;"><i class="fa-regular fa-clock"></i> 4 minute read · Written December 31, 2023 · Published June 29, 2025</h3>
@@ -68,5 +69,8 @@
 
   <div class="line" style="height: 1px; margin-top: 100px; margin-bottom: 100px; position: relative; z-index: 11;"></div>
   <h5 style="font-weight: 100; margin-top: -90px; margin-bottom: 10px; position: relative; z-index: 11;">Website created by Hannah Webb | Visuals generated with DALL·E, powered by OpenAI</h5>
+</main>
+<script src="router.js"></script>
+<script src="background.js"></script>
 </body>
 </html>

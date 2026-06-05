@@ -33,7 +33,7 @@
     /* styling of HTML tags--navigation bar */
     nav { display: flex; justify-content: center; gap: 90px; margin: 10px 0; } 
     nav a { position: relative; color: #000000; text-decoration: none; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
-    nav a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background-color: #E8A090; transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
+    nav a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background-color: #000000; transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
     /* display: flex; turns container of nav bar into a flexbox--where elements are arranged in a row by default */
     /* justify-content is a unique property of the flexbox; it sets the alignment of the items within the container--center, left, right, etc.*/
     /* gap is another property unique to the flexbox; it sets the spacing between flex items--it's cleaner than using margin on each child. */
@@ -46,6 +46,8 @@
     /* styling of HTML tag--body */
     body { font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; padding: 20px; }
     img { margin: 16px; border-radius: 7%; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5); width: 30%; min-width: 250px; }
+    body::after { content: ""; position: fixed; bottom: 0; left: 0; width: 100%; height: 80px; pointer-events: none; background: linear-gradient(to top, rgb(140, 101, 115), rgba(255,255,255,0)); z-index: 10; }
+
     /* styling the body tag sets default styles for the whole page, helping you avoid redundant code */
     /* most elements inside the body will inherit these styles unless overriden by more specific attributes */
     /* here, we style the background of our webpage to white, apply the kosugi maru font, center inline content, and add 20px of padding around everything */
@@ -74,17 +76,14 @@
     .content-wrapper { flex-direction: column; width: 93.25%; }}
 
     h1:hover { color: #414141; } /* styling when hovering over links */
-    nav a:hover { color: #E8A090; }
+    nav a:hover { color: #000000; }
     nav a:hover::after, nav a.active::after { transform: scaleX(1); }
-    nav a.active { color: #E8A090; }
-    .icon-row a:hover { color: #E8A090; }
-    body::after { content: ""; position: fixed; bottom: 0; left: 0; width: 100%; height: 80px; pointer-events: none; background: linear-gradient(to top, white, rgba(255,255,255,0)); z-index: 10; }
-
+    nav a.active { color: #000000; }
+    .icon-row a:hover { color: #000000; }
   </style>
   </head>
 
   <body> <!-- begins visible page content -->
-
   <header> <!-- intro-related content -->
   <h1><a href="index.html" class="home-link">hannah webb</a></h1> 
   <div class="line"></div>
@@ -106,12 +105,13 @@
   </div>
   </div>
   </div>
-  </main>
-
   <footer> <!-- closing-related content -->
   <div class="line" style="height: 1px; margin-top: 100px;"></div>
   <p>Website created by Hannah Webb</p>
   </footer>
+  </main>
 
+  <script src="router.js"></script>
+  <script src="background.js"></script>
   </body> <!-- ends visible page content -->
 </html>
