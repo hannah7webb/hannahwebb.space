@@ -20,7 +20,8 @@
     h3 { color: #000000; font-size: 16px; font-family: 'Karla'; margin: 20px 0; padding: 0 17.5%; line-height: 1.3; text-align: left;}
     h4 { color: #000000; font-size: 12px; font-family: 'Karla'; margin-top: 10px; text-align: left; margin: 0 17.5%;}
     nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 90px; margin: 10px 0; } /* a = links in CSS */
-    nav a { text-decoration: none; color: #000000; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
+    nav a { position: relative; text-decoration: none; color: #000000; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
+    nav a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background-color: #E8A090; transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
     body { margin-bottom: 100px; font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; margin: 0; padding: 20px; }
 
     body::after { content: ""; position: fixed; bottom: 0; left: 0; width: 100%; height: 80px; pointer-events: none; background: linear-gradient(to top, white, rgba(255,255,255,0)); z-index: 10; }
@@ -51,7 +52,9 @@
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); }}
 
     h1:hover { color: #414141; } /* styling when hovering over links */
-    nav a:hover { color: #535353; }
+    nav a:hover { color: #E8A090; }
+    nav a:hover::after, nav a.active::after { transform: scaleX(1); }
+    nav a.active { color: #E8A090; }
     .reveal-gradient { position: relative; }
     .reveal-gradient::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); pointer-events: none; z-index: 1; }
     .fade-section { animation: fadeInUp 1s ease forwards; opacity: 0; transform: translateY(30px); }
@@ -64,7 +67,7 @@
   <h1><a href="index.html" class="home-link">hannah webb</a></h1> 
 
   <div class="line"></div>
-  <nav> <a href="projects.html">projects</a> <a href="clarinet.html">clarinet</a> <a href="writing.html">writing</a></nav>
+  <nav> <a href="projects.html">projects</a> <a href="clarinet.html" class="active">clarinet</a> <a href="writing.html">writing</a></nav>
   <div class="line"></div>
 
   <div class = "video-wrapper fade-section">
@@ -118,7 +121,7 @@
     <div class="description">Montecito International Music Festival <i class="fas fa-award"></i></div>
     <div class="year">2025</div>
     <div class="description">Northwestern Symphonic Wind Ensemble</div>
-    <div class="year">2024</div>
+    <div class="year">2024, 2026</div>
     <div class="description">Northwestern Symphonic Band <i class="fas fa-award"></i></div>
     <div class="year">2023 - 2024</div>
     <div class="description">Colburn Sinfonietta <i class="fas fa-award"></i></div>

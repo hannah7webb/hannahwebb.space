@@ -21,7 +21,8 @@
 
     footer p { color: #000000; font-size: 12px; font-family: 'Karla'; text-align: left; margin: 0 17.5%; }
     nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 90px; margin: 10px 0; } /* a = links in CSS */
-    nav a { color: #000000; text-decoration: none; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
+    nav a { position: relative; color: #000000; text-decoration: none; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
+    nav a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background-color: #E8A090; transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
     body { font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; margin: 0; padding: 20px; }
  
     .home-link { text-decoration: none; color: inherit; } /* styling of HTML classes (features defined in body) */
@@ -31,7 +32,7 @@
     .project-grid { text-decoration: none; width: 65%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 20px ; margin: 0 auto; }
     .project-card { text-decoration: none; margin-top: 20px; background-color: #e8e8e8; border-radius: 12px; padding: 20px; text-align: left; box-shadow: 0 8px 20px rgba(0,0,0,0.25); text-decoration: none; color: #000; transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .tool-buttons { text-decoration: none; background-color: #cdcdcd; border-radius: 6px; padding: 5px 10px; text-align: left; }
-    .fade-section { animation: fadeInUp 1s ease forwards; }
+    .fade-section { animation: fadeInUp 1s ease both; opacity: 0; transform: translateY(30px); }
     a.fade-section { text-decoration: none; color: inherit; }
     .bullets li {font-family: 'Karla'; font-size: 14px; margin: 12px 0; }
 
@@ -48,8 +49,19 @@
     .project-grid { width: 90%; }}
 
     h1:hover { color: #414141; } /* styling when hovering over links */
-    nav a:hover { color: #535353; }
+    nav a:hover { color: #E8A090; }
+    nav a:hover::after, nav a.active::after { transform: scaleX(1); }
+    nav a.active { color: #E8A090; }
     .project-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); cursor: pointer; }
+    .project-grid .fade-section:nth-child(2) { animation-delay: 0.15s; }
+    .project-grid .fade-section:nth-child(3) { animation-delay: 0.3s; }
+    .tool-html { background-color: #FDEAE6; color: #A0453A; }
+    .tool-css { background-color: #E4EEF9; color: #2D5FA0; }
+    .tool-git { background-color: #FFF0E0; color: #A06020; }
+    .tool-uiux { background-color: #F0E8FA; color: #6B38A0; }
+    .tool-javascript { background-color: #FDF8E0; color: #806A10; }
+    .tool-python { background-color: #E4F5F0; color: #1E8070; }
+    body::after { content: ""; position: fixed; bottom: 0; left: 0; width: 100%; height: 80px; pointer-events: none; background: linear-gradient(to top, white, rgba(255,255,255,0)); z-index: 10; }
 
   </style>
 </head>
@@ -59,7 +71,7 @@
   <header> <!-- intro-related content -->
   <h1><a href="index.html" class="home-link">hannah webb</a></h1> 
   <div class="line"></div>
-  <nav> <a href="projects.html">projects</a> <a href="clarinet.html">clarinet</a> <a href="writing.html">writing</a></nav>
+  <nav> <a href="projects.html" class="active">projects</a> <a href="clarinet.html">clarinet</a> <a href="writing.html">writing</a></nav>
   <div class="line"></div>
   </header>
 
@@ -84,11 +96,11 @@
   </ul>
 </div>
 
-  <div style = "display: flex; flex-wrap: wrap; gap: 20px; color: #4e4e4e; font-family: Karla; font-size: 14px;">
-  <div class = "tool-buttons">html</div>
-  <div class = "tool-buttons">css</div>
-  <div class = "tool-buttons">git</div>
-  <div class = "tool-buttons">UI/UX</div>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; font-family: Karla; font-size: 14px;">
+  <div class="tool-buttons tool-html">html</div>
+  <div class="tool-buttons tool-css">css</div>
+  <div class="tool-buttons tool-git">git</div>
+  <div class="tool-buttons tool-uiux">UI/UX</div>
   </div>
 
   </div>
@@ -111,12 +123,12 @@
 
  <div style = "margin-bottom: 28px;"></div>
 
-  <div style = "display: flex; flex-wrap: wrap; gap: 20px; color: #4e4e4e; font-family: Karla; font-size: 14px;">
-  <div class = "tool-buttons">javascript</div>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; font-family: Karla; font-size: 14px;">
+  <div class="tool-buttons tool-javascript">javascript</div>
   </div>
 
   </div>
-  </a> 
+  </a>
 
   <a href="https://github.com/hannah7webb/python-checkers" class="fade-section">
   <div class = "project-card">
@@ -136,8 +148,8 @@
 
  <div style = "margin-bottom: 28px;"></div>
 
-  <div style = "display: flex; flex-wrap: wrap; gap: 20px; color: #4e4e4e; font-family: Karla; font-size: 14px;">
-  <div class = "tool-buttons">python</div>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; font-family: Karla; font-size: 14px;">
+  <div class="tool-buttons tool-python">python</div>
   </div>
 
   </div>

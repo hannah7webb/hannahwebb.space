@@ -19,7 +19,8 @@
     h3 { font-family: 'Karla'; font-size: 16px; }
     h4 { color: #000000; font-size: 12px; font-family: 'Karla'; margin-top: 10px; text-align: left; margin: 0 17.5%;}
     nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 90px; margin: 10px 0; } /* a = links in CSS */
-    nav a { text-decoration: none; color: #000000; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
+    nav a { position: relative; text-decoration: none; color: #000000; font-weight: bold; font-size: 18px; padding: 2px; transition: color 0.3s; }
+    nav a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background-color: #E8A090; transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
     body { font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; margin: 0; padding: 20px; }
 
     .home-link { text-decoration: none; color: inherit; } /* styling of HTML classes (features defined in body) */
@@ -28,10 +29,11 @@
     .content-wrapper img { margin: 0 auto; border-radius: 7%; max-width: 95%; height: auto; margin-top: -20px;}
     .project-grid { text-decoration: none; width: 65%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 20px ; margin: 0 auto; }
     .project-card { text-decoration: none; margin-top: 20px; background-color: #e8e8e8; border-radius: 12px; padding: 20px; text-align: left; box-shadow: 0 8px 20px rgba(0,0,0,0.25); text-decoration: none; color: #000; transition: transform 0.3s ease, box-shadow 0.3s ease;}
-    .fade-section { animation: fadeInUp 1s ease forwards; }
+    .fade-section { animation: fadeInUp 1s ease both; opacity: 0; transform: translateY(30px); }
     a.fade-section { text-decoration: none; color: inherit; }
 
     .project-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); cursor: pointer; }
+    .project-grid .fade-section:nth-child(2) { animation-delay: 0.15s; }
 
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 890px) { /* styling that overrides when screen is 768px wide or smaller */
@@ -44,7 +46,10 @@
     .project-grid { width: 90%; }}
 
     h1:hover { color: #414141; } /* styling when hovering over links */
-    nav a:hover { color: #535353; }
+    nav a:hover { color: #E8A090; }
+    nav a:hover::after, nav a.active::after { transform: scaleX(1); }
+    nav a.active { color: #E8A090; }
+    body::after { content: ""; position: fixed; bottom: 0; left: 0; width: 100%; height: 80px; pointer-events: none; background: linear-gradient(to top, white, rgba(255,255,255,0)); z-index: 10; }
   </style>
 </head>
 
@@ -53,7 +58,7 @@
 <header>
 <h1><a href="index.html" class="home-link">hannah webb</a></h1> 
 <div class="line"></div>
-<nav> <a href="projects.html">projects</a> <a href="clarinet.html">clarinet</a> <a href="writing.html">writing</a></nav>
+<nav> <a href="projects.html">projects</a> <a href="clarinet.html">clarinet</a> <a href="writing.html" class="active">writing</a></nav>
 <div class="line"></div>
 </header>
 
