@@ -33,6 +33,7 @@
 
       if (push) history.pushState({ url }, '', url);
       window.scrollTo(0, 0);
+      window.dispatchEvent(new CustomEvent('routechange', { detail: { page } }));
 
     } catch {
       location.href = url; // fallback: let the browser navigate normally

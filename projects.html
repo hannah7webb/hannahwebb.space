@@ -301,6 +301,12 @@
   window.addEventListener('load', equalizeAndAlign);
   window.addEventListener('resize', equalizeAndAlign);
   if (document.fonts) document.fonts.ready.then(equalizeAndAlign);
+  window.addEventListener('routechange', function (e) {
+    if (e.detail.page === 'projects.html' || e.detail.page === '') {
+      _colCount = 0; // force full rebuild after router re-injects content
+      equalizeAndAlign();
+    }
+  });
 </script>
 <script src="router.js"></script>
 <script src="darkmode.js"></script>
