@@ -47,7 +47,8 @@
     /* styling of HTML tag--body */
     body { font-family: 'Kosugi Maru'; background-color: #FFFFFF; text-align: center; margin: 0; padding: 20px; }
     img { margin: 16px; border-radius: 7%; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5); width: 30%; min-width: 250px; }
-    body::after { content: ""; position: fixed; bottom: 0; left: 0; width: 100%; height: 80px; pointer-events: none; background: linear-gradient(to top, rgb(140, 101, 115), rgba(255,255,255,0)); z-index: 10; }
+    body::after  { content: ""; position: fixed; bottom: 0; left: 0; width: 100%; height: 80px; pointer-events: none; background: linear-gradient(to top, rgb(140, 101, 115), rgba(255,255,255,0)); z-index: 10; }
+    body::before { content: ""; position: fixed; bottom: 0; left: 0; width: 100%; height: 80px; pointer-events: none; background: linear-gradient(to top, rgba(5,5,7,0.92), transparent); z-index: 11; opacity: 0; transition: opacity 1800ms ease; }
 
     /* styling the body tag sets default styles for the whole page, helping you avoid redundant code */
     /* most elements inside the body will inherit these styles unless overriden by more specific attributes */

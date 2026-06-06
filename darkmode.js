@@ -74,10 +74,8 @@
     html.dark main a { color: #6f93d6; }
     html.dark main a:hover { color: #4fb8a8; }
 
-    /* bottom fade to match dark base */
-    html.dark body::after {
-      background: linear-gradient(to top, rgba(5,5,7,0.92), transparent);
-    }
+    /* bottom fade — cross-fades via opacity on ::before layer */
+    html.dark body::before { opacity: 1; }
 
     /* the toggle button itself */
     html.dark #dark-toggle { color: rgba(255,255,255,0.85) !important; }
