@@ -211,7 +211,7 @@
     const allCards = Array.from(grid.querySelectorAll('.fade-section'));
     const gap = 20, minW = 280;
     const numCols = Math.max(1, Math.floor((grid.clientWidth + gap) / (minW + gap)));
-    if (numCols === _colCount) return;
+    if (numCols === _colCount && grid.querySelectorAll('.col-wrap').length === numCols) return;
     _colCount = numCols;
 
     // Detach all cards into a fragment, then remove old col wrappers
@@ -235,8 +235,38 @@
     });
   }
 
+  // Add expand buttons — called every layout pass so buttons survive router re-renders
+  function addExpandButtons() {
+    document.querySelectorAll('.bullets').forEach(bullets => {
+      if (bullets.parentNode.querySelector('.expand-btn')) return; // already present
+      const ul = bullets.querySelector('ul');
+      if (!ul || ul.querySelectorAll('li').length < 2) return;
+
+      const anchor = bullets.closest('a.fade-section');
+      const btn = document.createElement('button');
+      btn.className = 'expand-btn';
+      btn.textContent = '▾ show more';
+
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const expanded = bullets.classList.toggle('expanded');
+        btn.textContent = expanded ? '▴ show less' : '▾ show more';
+        if (expanded) {
+          anchor.dataset.expanded = '1';
+        } else {
+          delete anchor.dataset.expanded;
+          equalizeAndAlign();
+        }
+      });
+
+      bullets.parentNode.insertBefore(btn, bullets.nextSibling);
+    });
+  }
+
   function equalizeAndAlign() {
     buildColumns();
+    addExpandButtons();
     const cols = Array.from(document.querySelectorAll('.col-wrap'));
     if (!cols.length) return;
 
@@ -245,7 +275,6 @@
     for (let r = 0; r < numRows; r++) {
       const rowCards = cols.map(col => col.children[r]).filter(Boolean);
 
-      // Clear any previously-set heights; reset button margins
       rowCards.forEach(c => {
         c.style.height = '';
         const btn = c.querySelector('.expand-btn');
@@ -255,7 +284,6 @@
       const active = rowCards.filter(c => !c.dataset.expanded);
       if (!active.length) continue;
 
-      // Align buttons so they sit at the same distance from the image on every card
       const btns = active.map(c => c.querySelector('.expand-btn')).filter(Boolean);
       if (btns.length >= 2) {
         const tops = btns.map(btn =>
@@ -267,35 +295,8 @@
           if (diff > 0.5) btn.style.marginTop = (12 + diff) + 'px';
         });
       }
-      // Cards are no longer forced to equal height — they size to their own content
     }
   }
-
-  // Add expand buttons
-  document.querySelectorAll('.bullets').forEach(bullets => {
-    const ul = bullets.querySelector('ul');
-    if (!ul || ul.querySelectorAll('li').length < 2) return;
-
-    const anchor = bullets.closest('a.fade-section');
-    const btn = document.createElement('button');
-    btn.className = 'expand-btn';
-    btn.textContent = '▾ show more';
-
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      const expanded = bullets.classList.toggle('expanded');
-      btn.textContent = expanded ? '▴ show less' : '▾ show more';
-      if (expanded) {
-        anchor.dataset.expanded = '1';
-      } else {
-        delete anchor.dataset.expanded;
-        equalizeAndAlign();
-      }
-    });
-
-    bullets.parentNode.insertBefore(btn, bullets.nextSibling);
-  });
 
   window.addEventListener('load', equalizeAndAlign);
   window.addEventListener('resize', equalizeAndAlign);
