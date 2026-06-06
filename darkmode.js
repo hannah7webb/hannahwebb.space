@@ -47,17 +47,19 @@
       border-color: rgba(79,184,168,0.28);
       box-shadow: 0 14px 36px rgba(0,0,0,0.7);
     }
-    html.dark .project-card h3 { color: #e7e8f0; }
+    html.dark .project-card h3 { color: rgba(164,167,189,0.6); }
+    html.dark .project-card h3::first-line { color: #e7e8f0; }
     html.dark .project-card p  { color: #a4a7bd; }
 
-    /* tool badges */
-    html.dark .tool-buttons,
-    html.dark .tool-html, html.dark .tool-css, html.dark .tool-git,
-    html.dark .tool-uiux, html.dark .tool-javascript, html.dark .tool-python {
-      background-color: rgba(111,147,214,0.08);
-      color: #6f93d6;
-      border: 1px solid rgba(111,147,214,0.18);
-    }
+    /* tool badges — muted, on-theme with the dark bg palette */
+    html.dark .tool-buttons    { background-color: rgba(255,255,255,0.04); color: #7880a0; border: 1px solid rgba(255,255,255,0.08); }
+    html.dark .tool-html       { background-color: rgba(6,32,18,0.85);    color: #4a9a72; border: 1px solid rgba(50,130,85,0.3); }
+    html.dark .tool-css        { background-color: rgba(45,8,25,0.85);    color: #c05878; border: 1px solid rgba(160,55,95,0.3); }
+    html.dark .tool-git        { background-color: rgba(18,8,46,0.85);    color: #6860c8; border: 1px solid rgba(88,72,190,0.3); }
+    html.dark .tool-uiux       { background-color: rgba(42,6,32,0.85);    color: #b04888; border: 1px solid rgba(155,45,115,0.3); }
+    html.dark .tool-javascript { background-color: rgba(5,30,26,0.85);    color: #3a9082; border: 1px solid rgba(42,125,110,0.3); }
+    html.dark .tool-python     { background-color: rgba(26,8,48,0.85);    color: #7850b0; border: 1px solid rgba(105,55,165,0.3); }
+    html.dark .tool-prompteng  { background-color: rgba(10,18,52,0.85);   color:rgb(80, 94, 200); border: 1px solid rgba(65,80,190,0.3); }
 
     /* footer / attribution */
     html.dark footer p { color: #585b73; }
