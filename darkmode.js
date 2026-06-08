@@ -60,6 +60,8 @@
     html.dark .tool-javascript { background-color: rgba(5,30,26,0.85);    color: #3a9082; border: 1px solid rgba(42,125,110,0.3); }
     html.dark .tool-python     { background-color: rgba(26,8,48,0.85);    color: #7850b0; border: 1px solid rgba(105,55,165,0.3); }
     html.dark .tool-prompteng  { background-color: rgba(10,18,52,0.85);   color:rgb(80, 94, 200); border: 1px solid rgba(65,80,190,0.3); }
+    html.dark .tool-nextjs     { background-color: rgba(25,10,55,0.85);   color: #aa78d8; border: 1px solid rgba(120,55,190,0.3); }
+    html.dark .tool-typescript { background-color: rgba(8,22,50,0.85);    color: #60a8e8; border: 1px solid rgba(40,100,190,0.3); }
 
     /* footer / attribution */
     html.dark footer p { color: #585b73; }
