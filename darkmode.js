@@ -62,6 +62,10 @@
     html.dark .tool-prompteng  { background-color: rgba(10,18,52,0.85);   color:rgb(80, 94, 200); border: 1px solid rgba(65,80,190,0.3); }
     html.dark .tool-nextjs     { background-color: rgba(25,10,55,0.85);   color: #aa78d8; border: 1px solid rgba(120,55,190,0.3); }
     html.dark .tool-typescript { background-color: rgba(8,22,50,0.85);    color: #60a8e8; border: 1px solid rgba(40,100,190,0.3); }
+    html.dark .tool-react      { background-color: rgba(5,30,45,0.85);    color: #48b8d8; border: 1px solid rgba(30,120,170,0.3); }
+    html.dark .tool-express    { background-color: rgba(12,28,10,0.85);   color: #70a858; border: 1px solid rgba(60,110,40,0.3); }
+    html.dark .tool-supabase   { background-color: rgba(5,35,28,0.85);    color: #40b890; border: 1px solid rgba(30,120,90,0.3); }
+    html.dark .tool-firebase   { background-color: rgba(40,25,5,0.85);    color: #c89040; border: 1px solid rgba(160,110,20,0.3); }
 
     /* footer / attribution */
     html.dark footer p { color: #585b73; }
